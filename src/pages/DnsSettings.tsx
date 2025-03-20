@@ -1,17 +1,45 @@
 
 import React from 'react';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
+import { Input } from '@/components/ui/input';
+import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form';
+import { useForm } from 'react-hook-form';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
 import GlassCard from '@/components/ui/GlassCard';
-import { Copy, Globe, Server, Check, Info, AlertTriangle } from 'lucide-react';
+import { Copy, Globe, Server, Check, Info, AlertTriangle, Plus } from 'lucide-react';
 import { useState } from 'react';
+import { toast } from 'sonner';
+
+// Define the types for DNS records and form values
+type DnsRecordType = 'A' | 'CNAME' | 'TXT' | 'MX';
+
+interface DnsRecord {
+  type: DnsRecordType;
+  name: string;
+  value: string;
+  ttl: string;
+  description: string;
+  priority?: string;
+}
+
+interface Domain {
+  id: string;
+  name: string;
+  records: DnsRecord[];
+}
+
+interface NewARecordForm {
+  name: string;
+  value: string;
+  ttl: string;
+  description: string;
+}
 
 const DnsSettings = () => {
   const [copiedField, setCopiedField] = useState<string | null>(null);
-
-  const domains = [
+  const [domains, setDomains] = useState<Domain[]>([
     {
       id: 'ownmyai',
       name: 'OwnMyAI.biz',
@@ -82,12 +110,46 @@ const DnsSettings = () => {
         }
       ]
     }
-  ];
+  ]);
+  
+  const [activeTab, setActiveTab] = useState('ownmyai');
+  const [isAddingRecord, setIsAddingRecord] = useState(false);
+
+  const form = useForm<NewARecordForm>({
+    defaultValues: {
+      name: '',
+      value: '',
+      ttl: '3600',
+      description: ''
+    }
+  });
 
   const copyToClipboard = (text: string, fieldId: string) => {
     navigator.clipboard.writeText(text);
     setCopiedField(fieldId);
     setTimeout(() => setCopiedField(null), 2000);
+  };
+
+  const handleAddRecord = (data: NewARecordForm) => {
+    const newRecord: DnsRecord = {
+      type: 'A',
+      name: data.name,
+      value: data.value,
+      ttl: data.ttl,
+      description: data.description
+    };
+
+    setDomains(prevDomains => 
+      prevDomains.map(domain => 
+        domain.id === activeTab 
+          ? { ...domain, records: [...domain.records, newRecord] } 
+          : domain
+      )
+    );
+
+    setIsAddingRecord(false);
+    form.reset();
+    toast.success(`New A record added to ${domains.find(d => d.id === activeTab)?.name}`);
   };
 
   return (
@@ -123,7 +185,11 @@ const DnsSettings = () => {
           </GlassCard>
         </div>
 
-        <Tabs defaultValue="ownmyai" className="w-full max-w-4xl mx-auto">
+        <Tabs 
+          defaultValue="ownmyai" 
+          className="w-full max-w-4xl mx-auto"
+          onValueChange={(value) => setActiveTab(value)}
+        >
           <TabsList className="mb-8 w-full justify-center">
             <TabsTrigger value="ownmyai" className="flex items-center gap-2 px-4 py-2">
               <Globe size={20} />
@@ -138,10 +204,70 @@ const DnsSettings = () => {
           {domains.map((domain) => (
             <TabsContent key={domain.id} value={domain.id} className="space-y-8">
               <GlassCard className="p-6">
-                <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Server size={20} />
-                  {domain.name} Route 53 Records
-                </h2>
+                <div className="flex justify-between items-center mb-4">
+                  <h2 className="text-2xl font-bold flex items-center gap-2">
+                    <Server size={20} />
+                    {domain.name} Route 53 Records
+                  </h2>
+                  <button
+                    onClick={() => setIsAddingRecord(!isAddingRecord)}
+                    className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4"
+                  >
+                    <Plus size={16} className="mr-2" />
+                    Add A Record
+                  </button>
+                </div>
+                
+                {isAddingRecord && activeTab === domain.id && (
+                  <div className="mb-6 p-4 border border-dashed rounded-lg">
+                    <h3 className="text-lg font-semibold mb-4">Add New A Record</h3>
+                    <Form {...form}>
+                      <form onSubmit={form.handleSubmit(handleAddRecord)} className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <FormItem>
+                            <FormLabel>Name (subdomain or @)</FormLabel>
+                            <FormControl>
+                              <Input placeholder="e.g. @ or subdomain" {...form.register("name")} />
+                            </FormControl>
+                          </FormItem>
+                          <FormItem>
+                            <FormLabel>Value (IP Address)</FormLabel>
+                            <FormControl>
+                              <Input placeholder="e.g. 192.168.1.1" {...form.register("value")} />
+                            </FormControl>
+                          </FormItem>
+                          <FormItem>
+                            <FormLabel>TTL (seconds)</FormLabel>
+                            <FormControl>
+                              <Input placeholder="3600" {...form.register("ttl")} />
+                            </FormControl>
+                          </FormItem>
+                          <FormItem>
+                            <FormLabel>Description</FormLabel>
+                            <FormControl>
+                              <Input placeholder="Optional description" {...form.register("description")} />
+                            </FormControl>
+                          </FormItem>
+                        </div>
+                        <div className="flex justify-end gap-2">
+                          <button
+                            type="button"
+                            onClick={() => setIsAddingRecord(false)}
+                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 px-4"
+                          >
+                            Cancel
+                          </button>
+                          <button
+                            type="submit"
+                            className="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring border border-green-500 bg-green-500 text-white hover:bg-green-600 h-9 px-4"
+                          >
+                            Add Record
+                          </button>
+                        </div>
+                      </form>
+                    </Form>
+                  </div>
+                )}
                 
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse">
