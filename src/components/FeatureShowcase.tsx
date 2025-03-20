@@ -2,6 +2,10 @@
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Database, Shield, Zap } from 'lucide-react';
 import AnimatedButton from './ui/AnimatedButton';
+import { toast } from './ui/use-toast';
+
+// Contact email configuration - same as in Hero component
+const CONTACT_EMAIL = 'trot.latter@4pm.net.au';
 
 const FeatureShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -24,6 +28,15 @@ const FeatureShowcase: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Handle Learn More button click
+  const handleLearnMore = () => {
+    console.log(`Learn more request submitted to: ${CONTACT_EMAIL}`);
+    toast({
+      title: "Information Request",
+      description: `We'll send more information to your email. Our team at ${CONTACT_EMAIL} will be in touch shortly.`,
+    });
+  };
 
   return (
     <section ref={containerRef} className="py-20 md:py-32 px-6 md:px-8 overflow-hidden">
@@ -83,7 +96,7 @@ const FeatureShowcase: React.FC = () => {
               </div>
             </div>
             
-            <AnimatedButton className="group">
+            <AnimatedButton onClick={handleLearnMore} className="group">
               <span>Learn how it works</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </AnimatedButton>

@@ -2,6 +2,10 @@
 import React, { useEffect, useRef } from 'react';
 import AnimatedButton from './ui/AnimatedButton';
 import { ArrowRight, Shield, DollarSign, FileCheck } from 'lucide-react';
+import { toast } from './ui/use-toast';
+
+// Contact email configuration
+const CONTACT_EMAIL = 'trot.latter@4pm.net.au';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -82,6 +86,24 @@ const Hero: React.FC = () => {
     };
   }, []);
 
+  // Handle Get Started button click
+  const handleGetStarted = () => {
+    console.log(`Contact request submitted to: ${CONTACT_EMAIL}`);
+    toast({
+      title: "Request Submitted",
+      description: `We'll contact you at your email address soon. Our team at ${CONTACT_EMAIL} will review your request.`,
+    });
+  };
+
+  // Handle Schedule Demo button click
+  const handleScheduleDemo = () => {
+    console.log(`Demo request submitted to: ${CONTACT_EMAIL}`);
+    toast({
+      title: "Demo Scheduled",
+      description: `Thank you for scheduling a demo. Our team at ${CONTACT_EMAIL} will contact you shortly with available times.`,
+    });
+  };
+
   return (
     <div 
       ref={heroRef}
@@ -110,11 +132,20 @@ const Hero: React.FC = () => {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-up" style={{ animationDelay: '1000ms' }}>
-            <AnimatedButton size="lg" className="group bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700">
+            <AnimatedButton 
+              onClick={handleGetStarted}
+              size="lg" 
+              className="group bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700"
+            >
               <span>Get Started</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </AnimatedButton>
-            <AnimatedButton variant="secondary" size="lg" className="hover:bg-white/20 backdrop-blur-sm">
+            <AnimatedButton 
+              onClick={handleScheduleDemo}
+              variant="secondary" 
+              size="lg" 
+              className="hover:bg-white/20 backdrop-blur-sm"
+            >
               Schedule a Demo
             </AnimatedButton>
           </div>
