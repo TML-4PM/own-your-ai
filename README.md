@@ -1,3 +1,4 @@
+
 # Welcome to your Lovable project
 
 ## Project info
@@ -52,18 +53,31 @@ npm run dev
 
 ## What technologies are used for this project?
 
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
 - React
 - shadcn-ui
 - Tailwind CSS
+- Stripe for payments
 
 ## How can I deploy this project?
 
+### Deploy with Lovable
+
 Simply open [Lovable](https://lovable.dev/projects/94ed94ff-36f9-4d97-908c-e2cb4dda6395) and click on Share -> Publish.
+
+### Deploy with Vercel
+
+This project is ready for Vercel deployment:
+
+1. Push your repository to GitHub
+2. Visit [Vercel](https://vercel.com) and create a new project
+3. Import your GitHub repository
+4. Vercel will automatically detect the Vite configuration
+5. Click "Deploy"
 
 ## I want to use a custom domain - is that possible?
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+You can use your own domain with Vercel by adding it in the project settings. If you're using Lovable for hosting and need a custom domain, we recommend using Netlify as described in our docs: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
