@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
 import GlassCard from '@/components/ui/GlassCard';
-import { Copy, Globe, Server, Check, Info } from 'lucide-react';
+import { Copy, Globe, Server, Check, Info, AlertTriangle } from 'lucide-react';
 import { useState } from 'react';
 
 const DnsSettings = () => {
@@ -19,27 +19,31 @@ const DnsSettings = () => {
         {
           type: 'A',
           name: '@',
-          value: '192.168.1.100',
-          ttl: '3600'
+          value: '76.76.21.21',
+          ttl: '3600',
+          description: 'Points to Vercel hosting IP'
         },
         {
           type: 'CNAME',
           name: 'www',
-          value: '@',
-          ttl: '3600'
-        },
-        {
-          type: 'MX',
-          name: '@',
-          value: 'mail.ownmyai.biz',
-          priority: '10',
-          ttl: '3600'
+          value: 'cname.vercel-dns.com',
+          ttl: '3600',
+          description: 'Redirects www subdomain to main domain'
         },
         {
           type: 'TXT',
           name: '@',
-          value: 'v=spf1 include:_spf.ownmyai.biz ~all',
-          ttl: '3600'
+          value: 'v=spf1 include:_spf.google.com ~all',
+          ttl: '3600',
+          description: 'SPF record for email authentication'
+        },
+        {
+          type: 'MX',
+          name: '@',
+          value: 'aspmx.l.google.com',
+          priority: '1',
+          ttl: '3600',
+          description: 'Primary mail exchange server'
         }
       ]
     },
@@ -50,27 +54,31 @@ const DnsSettings = () => {
         {
           type: 'A',
           name: '@',
-          value: '192.168.1.200',
-          ttl: '3600'
+          value: '76.76.21.21',
+          ttl: '3600',
+          description: 'Points to Vercel hosting IP'
         },
         {
           type: 'CNAME',
           name: 'www',
-          value: '@',
-          ttl: '3600'
-        },
-        {
-          type: 'MX',
-          name: '@',
-          value: 'mail.ownyourai.biz',
-          priority: '10',
-          ttl: '3600'
+          value: 'cname.vercel-dns.com',
+          ttl: '3600',
+          description: 'Redirects www subdomain to main domain'
         },
         {
           type: 'TXT',
           name: '@',
-          value: 'v=spf1 include:_spf.ownyourai.biz ~all',
-          ttl: '3600'
+          value: 'v=spf1 include:_spf.google.com ~all',
+          ttl: '3600',
+          description: 'SPF record for email authentication'
+        },
+        {
+          type: 'MX',
+          name: '@',
+          value: 'aspmx.l.google.com',
+          priority: '1',
+          ttl: '3600',
+          description: 'Primary mail exchange server'
         }
       ]
     }
@@ -89,10 +97,30 @@ const DnsSettings = () => {
       
       <main className="max-w-7xl mx-auto px-4 py-24 md:py-32">
         <div className="text-center mb-12">
-          <h1 className="text-3xl md:text-5xl font-bold mb-4">DNS Settings</h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Configure your DNS settings for OwnMyAI.biz and OwnYourAI.biz domains to ensure proper connectivity.
+          <h1 className="text-3xl md:text-5xl font-bold mb-4">AWS Route 53 DNS Settings</h1>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Configure your AWS Route 53 DNS settings for OwnMyAI.biz and OwnYourAI.biz domains to point to your hosting service.
           </p>
+        </div>
+
+        <div className="mb-12">
+          <GlassCard className="p-6">
+            <div className="flex items-start gap-4">
+              <AlertTriangle size={24} className="text-amber-500 mt-1 flex-shrink-0" />
+              <div>
+                <h3 className="text-xl font-semibold mb-2">Route 53 Setup Instructions</h3>
+                <ol className="list-decimal list-inside space-y-3 ml-2 text-muted-foreground">
+                  <li>Log into your AWS Management Console and navigate to Route 53 service.</li>
+                  <li>In the Route 53 dashboard, click on "Hosted zones" in the left navigation menu.</li>
+                  <li>Click "Create hosted zone", enter your domain name (e.g., ownmyai.biz), and click "Create".</li>
+                  <li>After creating the hosted zone, you'll need to update your domain's name servers at your domain registrar to use AWS's name servers.</li>
+                  <li>Find the NS (Name Server) records in your new hosted zone and copy them.</li>
+                  <li>Go to your domain registrar's website and update the domain's name servers with the AWS name servers you copied.</li>
+                  <li>Return to the Route 53 hosted zone and add the DNS records listed below for each domain.</li>
+                </ol>
+              </div>
+            </div>
+          </GlassCard>
         </div>
 
         <Tabs defaultValue="ownmyai" className="w-full max-w-4xl mx-auto">
@@ -112,7 +140,7 @@ const DnsSettings = () => {
               <GlassCard className="p-6">
                 <h2 className="text-2xl font-bold mb-4 flex items-center gap-2">
                   <Server size={20} />
-                  {domain.name} DNS Records
+                  {domain.name} Route 53 Records
                 </h2>
                 
                 <div className="overflow-x-auto">
@@ -123,6 +151,7 @@ const DnsSettings = () => {
                         <th className="text-left py-4 px-4">Name</th>
                         <th className="text-left py-4 px-4">Value</th>
                         <th className="text-left py-4 px-4">TTL</th>
+                        <th className="text-left py-4 px-4">Description</th>
                         <th className="text-left py-4 px-4">Action</th>
                       </tr>
                     </thead>
@@ -131,8 +160,9 @@ const DnsSettings = () => {
                         <tr key={index} className="border-b hover:bg-white/5">
                           <td className="py-4 px-4 font-medium">{record.type}</td>
                           <td className="py-4 px-4">{record.name}</td>
-                          <td className="py-4 px-4 font-mono text-sm">{record.value}</td>
+                          <td className="py-4 px-4 font-mono text-sm max-w-[200px] break-words">{record.value}</td>
                           <td className="py-4 px-4">{record.ttl}</td>
+                          <td className="py-4 px-4 text-sm text-muted-foreground">{record.description}</td>
                           <td className="py-4 px-4">
                             <button
                               onClick={() => copyToClipboard(record.value, `${domain.id}-${index}`)}
@@ -157,13 +187,14 @@ const DnsSettings = () => {
                 <div className="flex items-start gap-4">
                   <Info size={24} className="text-blue-500 mt-1 flex-shrink-0" />
                   <div>
-                    <h3 className="text-xl font-semibold mb-2">Important Notes</h3>
+                    <h3 className="text-xl font-semibold mb-2">Important Notes for AWS Route 53</h3>
                     <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                      <li>DNS changes typically take 24-48 hours to fully propagate across the internet.</li>
-                      <li>The A record points to your server's IP address.</li>
-                      <li>The CNAME record directs the www subdomain to your main domain.</li>
-                      <li>MX records are required for email delivery.</li>
-                      <li>TXT records are used for domain verification and email security.</li>
+                      <li>DNS propagation typically takes 24-48 hours after making changes in Route 53.</li>
+                      <li>The A record points to your hosting service's IP address. Update this with your actual hosting IP.</li>
+                      <li>You can create an alias A record instead if you're using AWS services like CloudFront or Elastic Load Balancer.</li>
+                      <li>For CNAME records, make sure to use the fully qualified domain name (FQDN) with a trailing period.</li>
+                      <li>If you're using AWS Certificate Manager for SSL, you'll need to validate domain ownership using either DNS validation (recommended) or email validation.</li>
+                      <li>Route 53 charges a small monthly fee for each hosted zone ($0.50/month per hosted zone as of last update).</li>
                     </ul>
                   </div>
                 </div>
