@@ -43,10 +43,10 @@ const BlurredBackground: React.FC<BlurredBackgroundProps> = ({ className }) => {
       
       {/* Animated gradient blobs */}
       <div ref={blobsRef} className="absolute inset-0">
-        <div className="absolute top-[-10%] left-[10%] w-[30vw] h-[30vw] bg-primary/20 rounded-full filter blur-3xl animate-float opacity-50 transition-transform duration-700 ease-out" />
-        <div className="absolute top-[40%] right-[-5%] w-[25vw] h-[25vw] bg-blue-400/20 rounded-full filter blur-3xl animate-float opacity-40 transition-transform duration-700 ease-out" style={{ animationDelay: '-2s' }} />
-        <div className="absolute bottom-[-5%] left-[30%] w-[20vw] h-[20vw] bg-violet-400/20 rounded-full filter blur-3xl animate-float opacity-30 transition-transform duration-700 ease-out" style={{ animationDelay: '-4s' }} />
-        <div className="absolute top-[20%] left-[60%] w-[15vw] h-[15vw] bg-cyan-400/20 rounded-full filter blur-3xl animate-float opacity-20 transition-transform duration-700 ease-out" style={{ animationDelay: '-3s' }} />
+        <div className="absolute top-[-10%] left-[10%] w-[30vw] h-[30vw] bg-indigo-600/30 rounded-full filter blur-3xl animate-float opacity-60 transition-transform duration-700 ease-out" />
+        <div className="absolute top-[40%] right-[-5%] w-[25vw] h-[25vw] bg-purple-600/30 rounded-full filter blur-3xl animate-float opacity-50 transition-transform duration-700 ease-out" style={{ animationDelay: '-2s' }} />
+        <div className="absolute bottom-[-5%] left-[30%] w-[20vw] h-[20vw] bg-pink-500/30 rounded-full filter blur-3xl animate-float opacity-40 transition-transform duration-700 ease-out" style={{ animationDelay: '-4s' }} />
+        <div className="absolute top-[20%] left-[60%] w-[15vw] h-[15vw] bg-cyan-500/30 rounded-full filter blur-3xl animate-float opacity-30 transition-transform duration-700 ease-out" style={{ animationDelay: '-3s' }} />
       </div>
       
       {/* Grid Pattern */}
@@ -58,9 +58,18 @@ const BlurredBackground: React.FC<BlurredBackgroundProps> = ({ className }) => {
         }}
       />
       
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 -z-30 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1518770660439-4636190af475" 
+          alt="Technology background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-primary/5 to-transparent opacity-30" />
-      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-blue-400/5 to-transparent opacity-30" />
+      <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-indigo-600/10 to-transparent opacity-40" />
+      <div className="absolute inset-x-0 bottom-0 h-64 bg-gradient-to-t from-purple-600/10 to-transparent opacity-40" />
     </div>
   );
 };

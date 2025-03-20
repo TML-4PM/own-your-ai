@@ -8,6 +8,8 @@ interface Testimonial {
   author: string;
   position: string;
   company: string;
+  gradient: string;
+  textColor: string;
 }
 
 const testimonials: Testimonial[] = [
@@ -15,19 +17,25 @@ const testimonials: Testimonial[] = [
     quote: "The AI brand protection service has been a game-changer for our company. We've seen unauthorized uses drop by 75% in the first month.",
     author: "Sarah Chen",
     position: "CMO",
-    company: "TechVision AI"
+    company: "TechVision AI",
+    gradient: "bg-gradient-to-br from-indigo-500/20 to-indigo-700/10",
+    textColor: "text-indigo-500"
   },
   {
     quote: "As an AI-first startup, protecting our digital assets was becoming a nightmare until we found this platform. Worth every penny.",
     author: "Michael Rodriguez",
     position: "Founder",
-    company: "NeuralVoice"
+    company: "NeuralVoice",
+    gradient: "bg-gradient-to-br from-purple-500/20 to-purple-700/10",
+    textColor: "text-purple-500"
   },
   {
     quote: "The licensing marketplace has opened new revenue streams we hadn't even considered. Our AI voice models are now generating passive income.",
     author: "Aisha Johnson",
     position: "Head of Innovation",
-    company: "Future Media Group"
+    company: "Future Media Group",
+    gradient: "bg-gradient-to-br from-pink-500/20 to-pink-700/10",
+    textColor: "text-pink-500"
   }
 ];
 
@@ -66,10 +74,19 @@ const Testimonials: React.FC = () => {
   }, []);
 
   return (
-    <section ref={containerRef} className="py-20 md:py-28 px-6 md:px-8 overflow-hidden">
+    <section ref={containerRef} className="py-20 md:py-28 px-6 md:px-8 overflow-hidden relative">
+      {/* Background Image */}
+      <div className="absolute inset-0 -z-10 opacity-5">
+        <img 
+          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" 
+          alt="Technology background" 
+          className="w-full h-full object-cover"
+        />
+      </div>
+      
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">What Our Clients Say</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent">What Our Clients Say</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Join the companies who have successfully protected and monetized their AI assets.
           </p>
@@ -83,12 +100,12 @@ const Testimonials: React.FC = () => {
               className="opacity-0 transform translate-y-8 transition-all duration-700"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <GlassCard className="h-full p-8 flex flex-col">
-                <Quote className="h-8 w-8 text-primary/60 mb-4" />
+              <GlassCard className={`h-full p-8 flex flex-col ${testimonial.gradient}`}>
+                <Quote className={`h-8 w-8 ${testimonial.textColor} mb-4`} />
                 <p className="text-lg mb-6 flex-grow">{testimonial.quote}</p>
                 <div>
                   <p className="font-semibold">{testimonial.author}</p>
-                  <p className="text-sm text-muted-foreground">
+                  <p className={`text-sm ${testimonial.textColor}`}>
                     {testimonial.position}, {testimonial.company}
                   </p>
                 </div>

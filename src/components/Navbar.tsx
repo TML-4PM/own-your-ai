@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import AnimatedButton from './ui/AnimatedButton';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -41,10 +41,6 @@ const Navbar: React.FC = () => {
           </Link>
           <Link to="/pricing" className="text-foreground/80 hover:text-foreground transition-colors duration-200">
             Pricing
-          </Link>
-          <Link to="/dns-settings" className="text-foreground/80 hover:text-foreground transition-colors duration-200 flex items-center gap-1">
-            <Globe size={16} />
-            DNS Settings
           </Link>
           <Link to="/about" className="text-foreground/80 hover:text-foreground transition-colors duration-200">
             About
@@ -95,14 +91,6 @@ const Navbar: React.FC = () => {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               Pricing
-            </Link>
-            <Link 
-              to="/dns-settings" 
-              className="flex items-center gap-2 py-2 text-foreground"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              <Globe size={16} />
-              DNS Settings
             </Link>
             <Link 
               to="/about" 
