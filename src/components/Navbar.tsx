@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
           to="/" 
           className="text-2xl font-display font-semibold text-foreground transition-all duration-300 hover:opacity-80"
         >
-          OwnMyAI
+          OwnMyAI.biz
         </Link>
 
         {/* Desktop Navigation */}

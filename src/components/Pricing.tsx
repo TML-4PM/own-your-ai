@@ -3,9 +3,12 @@ import React, { useState } from 'react';
 import AnimatedButton from './ui/AnimatedButton';
 import GlassCard from './ui/GlassCard';
 import { Check } from 'lucide-react';
+import PaymentModal from './PaymentModal';
 
 const Pricing: React.FC = () => {
   const [annual, setAnnual] = useState(false);
+  const [isPaymentModalOpen, setIsPaymentModalOpen] = useState(false);
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: number | string }>({ name: '', price: 0 });
   
   const plans = [
     {
@@ -52,6 +55,17 @@ const Pricing: React.FC = () => {
       highlighted: false
     }
   ];
+
+  const handlePlanSelect = (plan: { name: string; price: number | string }) => {
+    if (plan.price === "Custom") {
+      // Navigate to contact page or open contact form for enterprise plan
+      window.location.href = "/contact";
+      return;
+    }
+    
+    setSelectedPlan(plan);
+    setIsPaymentModalOpen(true);
+  };
 
   return (
     <section className="py-20 md:py-32 px-6 md:px-8 bg-gradient-to-b from-transparent to-muted/30">
@@ -131,6 +145,7 @@ const Pricing: React.FC = () => {
                   <AnimatedButton 
                     variant={plan.highlighted ? 'primary' : 'secondary'} 
                     className="w-full"
+                    onClick={() => handlePlanSelect(plan)}
                   >
                     {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
                   </AnimatedButton>
@@ -140,6 +155,13 @@ const Pricing: React.FC = () => {
           ))}
         </div>
       </div>
+
+      <PaymentModal 
+        isOpen={isPaymentModalOpen}
+        onClose={() => setIsPaymentModalOpen(false)}
+        planName={selectedPlan.name}
+        amount={typeof selectedPlan.price === 'number' ? Math.round(selectedPlan.price * 100) : 0}
+      />
     </section>
   );
 };

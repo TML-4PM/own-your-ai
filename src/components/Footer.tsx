@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
           {/* Brand/Company Info */}
           <div className="md:col-span-1">
             <Link to="/" className="text-2xl font-display font-semibold mb-6 inline-block">
-              OwnMyAI
+              OwnMyAI.biz
             </Link>
             <p className="text-muted-foreground mb-6">
               Your AI, Your Business, Your Rules. Protect and monetize your AI-generated assets.
@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
         
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center">
           <p className="text-muted-foreground text-sm">
-            &copy; {new Date().getFullYear()} OwnMyAI. All rights reserved.
+            &copy; {new Date().getFullYear()} OwnMyAI.biz & OwnYourAI.biz. All rights reserved.
           </p>
           
           <div className="mt-4 md:mt-0">
