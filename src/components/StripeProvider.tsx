@@ -3,9 +3,8 @@ import React from 'react';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 
-// This is a Stripe test publishable key
-// In a real implementation, you would use environment variables
-const stripePromise = loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+// Using the live publishable key
+const stripePromise = loadStripe('pk_live_51QdfYbD6fFdhmypR798NoSCJ4G9TGCkqw9QTuiDTkyvmn9tSrhey2n3cTHxjFG6GYDlcoBClLWsDN5Mgjb0tIfII00oVKQ67in');
 
 interface StripeProviderProps {
   children: React.ReactNode;
@@ -15,7 +14,7 @@ const StripeProvider: React.FC<StripeProviderProps> = ({ children }) => {
   // Stripe Elements configuration with appearance
   const options = {
     appearance: {
-      theme: 'stripe',
+      theme: 'stripe' as const,
       variables: {
         colorPrimary: '#6366f1',
         colorBackground: '#ffffff',
