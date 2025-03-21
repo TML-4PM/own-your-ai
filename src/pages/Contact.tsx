@@ -1,8 +1,11 @@
-import React from 'react';
+
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
 import { Mail, Send } from 'lucide-react';
+import AnimatedButton from '@/components/ui/AnimatedButton';
+import { toast } from '@/components/ui/use-toast';
 
 const Contact = () => {
   const contactEmail = 'info@ownyourai.biz';
