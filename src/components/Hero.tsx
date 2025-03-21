@@ -3,14 +3,16 @@ import React, { useEffect, useRef } from 'react';
 import AnimatedButton from './ui/AnimatedButton';
 import { ArrowRight, Shield, DollarSign, FileCheck } from 'lucide-react';
 import { toast } from './ui/use-toast';
+import { Link, useNavigate } from 'react-router-dom';
 
-// Contact email configuration
-const CONTACT_EMAIL = 'trot.latter@4pm.net.au';
+// Contact email configuration - corrected
+const CONTACT_EMAIL = 'troy.latter@4pm.net.au';
 
 const Hero: React.FC = () => {
   const heroRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const featureRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -86,13 +88,9 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // Handle Get Started button click
+  // Navigate to Get Started page
   const handleGetStarted = () => {
-    console.log(`Contact request submitted to: ${CONTACT_EMAIL}`);
-    toast({
-      title: "Request Submitted",
-      description: `We'll contact you at your email address soon. Our team at ${CONTACT_EMAIL} will review your request.`,
-    });
+    navigate('/get-started');
   };
 
   // Handle Schedule Demo button click
@@ -151,41 +149,56 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
-            <div 
-              ref={el => featureRefs.current[0] = el} 
-              className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/10 backdrop-blur-sm border border-white/10 transition-all hover:from-indigo-500/30 hover:to-purple-500/20"
-              style={{ opacity: 0, transform: 'translateY(30px)' }}
+            <Link 
+              to="/features#brand-protection"
+              className="block transition-transform hover:scale-105"
             >
-              <div className="h-14 w-14 rounded-full bg-indigo-500/20 text-indigo-500 flex items-center justify-center mb-4">
-                <Shield className="h-7 w-7" />
+              <div 
+                ref={el => featureRefs.current[0] = el} 
+                className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-indigo-500/20 to-purple-500/10 backdrop-blur-sm border border-white/10 transition-all hover:from-indigo-500/30 hover:to-purple-500/20 h-full"
+                style={{ opacity: 0, transform: 'translateY(30px)' }}
+              >
+                <div className="h-14 w-14 rounded-full bg-indigo-500/20 text-indigo-500 flex items-center justify-center mb-4">
+                  <Shield className="h-7 w-7" />
+                </div>
+                <h3 className="font-medium text-lg mb-2">AI Brand Protection</h3>
+                <p className="text-sm text-muted-foreground text-center">Detect where your AI-generated likeness is being used.</p>
               </div>
-              <h3 className="font-medium text-lg mb-2">AI Brand Protection</h3>
-              <p className="text-sm text-muted-foreground text-center">Detect where your AI-generated likeness is being used.</p>
-            </div>
+            </Link>
             
-            <div 
-              ref={el => featureRefs.current[1] = el}
-              className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/10 backdrop-blur-sm border border-white/10 transition-all hover:from-purple-500/30 hover:to-pink-500/20"
-              style={{ opacity: 0, transform: 'translateY(30px)' }}
+            <Link 
+              to="/features#monetization"
+              className="block transition-transform hover:scale-105"
             >
-              <div className="h-14 w-14 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-4">
-                <DollarSign className="h-7 w-7" />
+              <div 
+                ref={el => featureRefs.current[1] = el}
+                className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-purple-500/20 to-pink-500/10 backdrop-blur-sm border border-white/10 transition-all hover:from-purple-500/30 hover:to-pink-500/20 h-full"
+                style={{ opacity: 0, transform: 'translateY(30px)' }}
+              >
+                <div className="h-14 w-14 rounded-full bg-purple-500/20 text-purple-500 flex items-center justify-center mb-4">
+                  <DollarSign className="h-7 w-7" />
+                </div>
+                <h3 className="font-medium text-lg mb-2">AI Monetization Hub</h3>
+                <p className="text-sm text-muted-foreground text-center">Sell & license your AI-generated assets easily.</p>
               </div>
-              <h3 className="font-medium text-lg mb-2">AI Monetization Hub</h3>
-              <p className="text-sm text-muted-foreground text-center">Sell & license your AI-generated assets easily.</p>
-            </div>
+            </Link>
             
-            <div 
-              ref={el => featureRefs.current[2] = el}
-              className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-pink-500/20 to-rose-500/10 backdrop-blur-sm border border-white/10 transition-all hover:from-pink-500/30 hover:to-rose-500/20" 
-              style={{ opacity: 0, transform: 'translateY(30px)' }}
+            <Link 
+              to="/features#authentication"
+              className="block transition-transform hover:scale-105"
             >
-              <div className="h-14 w-14 rounded-full bg-pink-500/20 text-pink-500 flex items-center justify-center mb-4">
-                <FileCheck className="h-7 w-7" />
+              <div 
+                ref={el => featureRefs.current[2] = el}
+                className="flex flex-col items-center p-6 rounded-xl bg-gradient-to-br from-pink-500/20 to-rose-500/10 backdrop-blur-sm border border-white/10 transition-all hover:from-pink-500/30 hover:to-rose-500/20 h-full" 
+                style={{ opacity: 0, transform: 'translateY(30px)' }}
+              >
+                <div className="h-14 w-14 rounded-full bg-pink-500/20 text-pink-500 flex items-center justify-center mb-4">
+                  <FileCheck className="h-7 w-7" />
+                </div>
+                <h3 className="font-medium text-lg mb-2">AI Authentication</h3>
+                <p className="text-sm text-muted-foreground text-center">Blockchain-based AI signature to prove authenticity.</p>
               </div>
-              <h3 className="font-medium text-lg mb-2">AI Authentication</h3>
-              <p className="text-sm text-muted-foreground text-center">Blockchain-based AI signature to prove authenticity.</p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

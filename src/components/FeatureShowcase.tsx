@@ -1,15 +1,16 @@
-
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Database, Shield, Zap } from 'lucide-react';
 import AnimatedButton from './ui/AnimatedButton';
 import { toast } from './ui/use-toast';
+import { useNavigate } from 'react-router-dom';
 
-// Contact email configuration - same as in Hero component
-const CONTACT_EMAIL = 'trot.latter@4pm.net.au';
+// Contact email configuration - corrected
+const CONTACT_EMAIL = 'troy.latter@4pm.net.au';
 
 const FeatureShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,13 +30,9 @@ const FeatureShowcase: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Handle Learn More button click
+  // Navigate to features page instead of showing toast
   const handleLearnMore = () => {
-    console.log(`Learn more request submitted to: ${CONTACT_EMAIL}`);
-    toast({
-      title: "Information Request",
-      description: `We'll send more information to your email. Our team at ${CONTACT_EMAIL} will be in touch shortly.`,
-    });
+    navigate('/features');
   };
 
   return (
