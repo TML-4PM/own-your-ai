@@ -1,8 +1,9 @@
+
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlurredBackground from "@/components/BlurredBackground";
-import { Mail, Send, X, MessageSquare } from "lucide-react";
+import { Mail, Send, X, MessageSquare, PhoneCall, MapPin, Clock, HelpCircle } from "lucide-react";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import { toast } from "@/components/ui/use-toast";
 
@@ -87,7 +88,7 @@ const Contact = () => {
 
                 <div className="flex items-start">
                   <div className="bg-purple-500/20 p-3 rounded-full mr-5">
-                    <Phone className="h-6 w-6 text-purple-600" />
+                    <PhoneCall className="h-6 w-6 text-purple-600" />
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Phone</h3>

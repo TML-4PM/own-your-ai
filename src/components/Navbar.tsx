@@ -3,14 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState<string | null>(null);
   const location = useLocation();
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -49,7 +49,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Close mobile menu on route change
   useEffect(() => {
     closeMobileMenu();
   }, [location.pathname]);
@@ -66,7 +65,6 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Logo */}
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
               <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent flex items-center">
@@ -76,7 +74,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-1">
             <div className="relative group" onMouseLeave={closeDropdown}>
               <button 
@@ -175,7 +172,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/sign-in" className="text-sm font-medium hover:text-primary transition-colors">
               Sign in
@@ -185,7 +181,6 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
             <button 
               onClick={toggleMobileMenu} 
@@ -202,7 +197,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile menu */}
       <div 
         className={`fixed inset-0 bg-background z-40 transition-transform duration-300 ease-in-out transform ${
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
