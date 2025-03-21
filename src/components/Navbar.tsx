@@ -49,12 +49,16 @@ const Navbar: React.FC = () => {
 
         {/* CTA Buttons */}
         <div className="hidden md:flex items-center space-x-4">
-          <AnimatedButton variant="ghost" size="sm">
-            Sign In
-          </AnimatedButton>
-          <AnimatedButton>
-            Get Started
-          </AnimatedButton>
+          <Link to="/sign-in">
+            <AnimatedButton variant="ghost" size="sm">
+              Sign In
+            </AnimatedButton>
+          </Link>
+          <Link to="/get-started">
+            <AnimatedButton>
+              Get Started
+            </AnimatedButton>
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -100,12 +104,16 @@ const Navbar: React.FC = () => {
               About
             </Link>
             <div className="pt-4 flex flex-col space-y-3">
-              <AnimatedButton variant="ghost" size="sm" className="justify-start">
-                Sign In
-              </AnimatedButton>
-              <AnimatedButton className="w-full">
-                Get Started
-              </AnimatedButton>
+              <Link to="/sign-in" onClick={() => setIsMobileMenuOpen(false)}>
+                <AnimatedButton variant="ghost" size="sm" className="justify-start w-full">
+                  Sign In
+                </AnimatedButton>
+              </Link>
+              <Link to="/get-started" onClick={() => setIsMobileMenuOpen(false)}>
+                <AnimatedButton className="w-full">
+                  Get Started
+                </AnimatedButton>
+              </Link>
             </div>
           </div>
         </div>
