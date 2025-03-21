@@ -1,11 +1,10 @@
-
-import React, { useState } from 'react';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
-import { Mail, Send, Phone, Clock, MapPin, HelpCircle } from 'lucide-react';
-import AnimatedButton from '@/components/ui/AnimatedButton';
-import { toast } from '@/components/ui/use-toast';
+import React, { useState } from "react";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import BlurredBackground from "@/components/BlurredBackground";
+import { Mail, Send, X, MessageSquare } from "lucide-react";
+import AnimatedButton from "@/components/ui/AnimatedButton";
+import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
   const contactEmail = 'info@ownyourai.biz';

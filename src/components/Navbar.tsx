@@ -1,9 +1,9 @@
-
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
-import AnimatedButton from './ui/AnimatedButton';
-import useMobile from '@/hooks/use-mobile';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Menu, X, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
+import { useMobile } from "@/hooks/use-mobile";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -181,7 +181,7 @@ const Navbar = () => {
               Sign in
             </Link>
             <Link to="/get-started">
-              <AnimatedButton size="sm">Get Started</AnimatedButton>
+              <Button size="sm">Get Started</Button>
             </Link>
           </div>
 
@@ -297,7 +297,7 @@ const Navbar = () => {
               Sign in
             </Link>
             <Link to="/get-started" className="block px-3 mt-2">
-              <AnimatedButton className="w-full">Get Started</AnimatedButton>
+              <Button className="w-full">Get Started</Button>
             </Link>
           </div>
         </div>
