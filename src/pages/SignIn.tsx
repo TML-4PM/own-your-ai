@@ -39,17 +39,25 @@ const SignIn = () => {
       <BlurredBackground />
       <Navbar />
       
-      <main className="flex justify-center items-center min-h-screen pt-16 pb-16 px-6">
+      <main className="flex justify-center items-center min-h-screen pt-24 pb-20 px-6 md:px-10">
         <div className="w-full max-w-md">
-          <div className="bg-background/70 backdrop-blur-md border border-border rounded-xl p-8 shadow-lg">
+          <div className="bg-background/70 backdrop-blur-md border border-border rounded-xl p-10 shadow-lg">
             <div className="text-center mb-8">
-              <h1 className="text-3xl font-bold">Sign In</h1>
-              <p className="text-muted-foreground mt-2">Welcome back to OwnMyAI.biz</p>
+              <h1 className="text-3xl font-bold mb-3">Sign In</h1>
+              <p className="text-muted-foreground">Welcome back to OwnMyAI.biz</p>
+            </div>
+            
+            <div className="mb-8 rounded-lg overflow-hidden">
+              <img 
+                src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158" 
+                alt="Professional using AI tools" 
+                className="w-full h-48 object-cover"
+              />
             </div>
             
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-1">
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Email
                 </label>
                 <input
@@ -58,13 +66,13 @@ const SignIn = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   required
-                  className="w-full px-4 py-2 border border-border rounded-md bg-background/50"
+                  className="w-full px-4 py-3 border border-border rounded-md bg-background/50"
                   placeholder="your.email@example.com"
                 />
               </div>
               
               <div>
-                <div className="flex items-center justify-between mb-1">
+                <div className="flex items-center justify-between mb-2">
                   <label htmlFor="password" className="block text-sm font-medium">
                     Password
                   </label>
@@ -78,7 +86,7 @@ const SignIn = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   required
-                  className="w-full px-4 py-2 border border-border rounded-md bg-background/50"
+                  className="w-full px-4 py-3 border border-border rounded-md bg-background/50"
                   placeholder="••••••••"
                 />
               </div>
@@ -104,7 +112,7 @@ const SignIn = () => {
             <div className="mt-6 text-center text-sm">
               <p>
                 Don't have an account?{' '}
-                <Link to="/sign-up" className="text-primary hover:underline">
+                <Link to="/get-started" className="text-primary hover:underline">
                   Sign up
                 </Link>
               </p>
