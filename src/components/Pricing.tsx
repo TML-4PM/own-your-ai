@@ -12,28 +12,28 @@ const Pricing: React.FC = () => {
   
   const plans = [
     {
-      name: "Basic",
-      description: "Perfect for individuals and small businesses",
-      price: annual ? 199.9 : 19.99,
+      name: "Basic Protection",
+      description: "Essential protection for individuals and small businesses",
+      price: annual ? 990 : 99,
       features: [
-        "Basic AI monitoring",
-        "Manual takedown assistance",
-        "Content authentication",
+        "AI content monitoring",
+        "Basic takedown assistance",
+        "Monthly reports",
         "Email support",
         "Up to 5 AI assets"
       ],
       highlighted: false
     },
     {
-      name: "Pro",
-      description: "Ideal for growing businesses and creators",
-      price: annual ? 499.9 : 49.99,
+      name: "Professional",
+      description: "Advanced protection for growing businesses",
+      price: annual ? 2990 : 299,
       features: [
         "Everything in Basic",
-        "Takedown automation",
-        "API access",
-        "Licensing platform",
-        "Priority support",
+        "Priority takedowns",
+        "Weekly reports",
+        "Phone support",
+        "License management",
         "Up to 50 AI assets",
         "Analytics dashboard"
       ],
@@ -41,24 +41,24 @@ const Pricing: React.FC = () => {
     },
     {
       name: "Enterprise",
-      description: "Complete solution for larger organizations",
-      price: "Custom",
+      description: "Complete protection for large organizations",
+      price: "Contact us",
       features: [
-        "Everything in Pro",
-        "Full licensing & protection suite",
-        "Custom integrations",
+        "Everything in Professional",
         "Dedicated account manager",
+        "Custom API integration",
+        "Daily reports",
         "24/7 support",
         "Unlimited AI assets",
-        "Custom reporting"
+        "Advanced analytics"
       ],
       highlighted: false
     }
   ];
 
   const handlePlanSelect = (plan: { name: string; price: number | string }) => {
-    if (plan.price === "Custom") {
-      // Navigate to contact page or open contact form for enterprise plan
+    if (plan.price === "Contact us") {
+      // Navigate to contact page for enterprise plan
       window.location.href = "/contact";
       return;
     }
@@ -68,7 +68,7 @@ const Pricing: React.FC = () => {
   };
 
   return (
-    <section className="py-20 md:py-32 px-6 md:px-8 bg-gradient-to-b from-transparent to-muted/30">
+    <section className="py-20 md:py-28 px-6 md:px-8 bg-gradient-to-b from-transparent to-muted/30">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-3xl md:text-5xl font-bold mb-6">Simple, Transparent Pricing</h2>
@@ -107,49 +107,52 @@ const Pricing: React.FC = () => {
               {plan.highlighted && (
                 <div className="absolute -top-5 left-0 right-0 flex justify-center">
                   <span className="bg-primary text-primary-foreground text-sm font-medium px-4 py-1 rounded-full">
-                    Most Popular
+                    Recommended
                   </span>
                 </div>
               )}
               
               <GlassCard
                 intensity={plan.highlighted ? 'heavy' : 'medium'}
-                className={`p-8 h-full ${
+                className={`p-8 h-full flex flex-col ${
                   plan.highlighted ? 'border-primary/50 shadow-lg shadow-primary/10' : ''
                 }`}
               >
-                <div className="flex flex-col h-full">
-                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                  <p className="text-muted-foreground mb-6">{plan.description}</p>
-                  
-                  <div className="mb-6">
-                    {typeof plan.price === 'number' ? (
-                      <div className="flex items-baseline">
-                        <span className="text-4xl font-bold">${plan.price}</span>
-                        <span className="text-muted-foreground ml-2">/month</span>
-                      </div>
-                    ) : (
-                      <div className="text-4xl font-bold">{plan.price}</div>
-                    )}
+                <div className="mb-6">
+                  <div className="bg-primary/10 text-primary p-3 rounded-full inline-flex mb-4">
+                    <Check className="h-6 w-6" />
                   </div>
-                  
-                  <ul className="space-y-4 mb-8 flex-grow">
-                    {plan.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <Check className="h-5 w-5 text-primary mr-3 shrink-0" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <AnimatedButton 
-                    variant={plan.highlighted ? 'primary' : 'secondary'} 
-                    className="w-full"
-                    onClick={() => handlePlanSelect(plan)}
-                  >
-                    {plan.name === 'Enterprise' ? 'Contact Sales' : 'Get Started'}
-                  </AnimatedButton>
+                  <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                  <p className="text-muted-foreground mb-4">{plan.description}</p>
                 </div>
+                
+                <div className="mb-6">
+                  {typeof plan.price === 'number' ? (
+                    <div className="flex items-baseline">
+                      <span className="text-4xl font-bold">${plan.price}</span>
+                      <span className="text-muted-foreground ml-2">/month</span>
+                    </div>
+                  ) : (
+                    <div className="text-4xl font-bold">{plan.price}</div>
+                  )}
+                </div>
+                
+                <ul className="space-y-4 mb-8 flex-grow">
+                  {plan.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-start">
+                      <Check className="h-5 w-5 text-primary mr-3 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                
+                <AnimatedButton 
+                  variant={plan.highlighted ? 'primary' : 'secondary'} 
+                  className="w-full mt-auto"
+                  onClick={() => handlePlanSelect(plan)}
+                >
+                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Select'}
+                </AnimatedButton>
               </GlassCard>
             </div>
           ))}
@@ -160,7 +163,7 @@ const Pricing: React.FC = () => {
         isOpen={isPaymentModalOpen}
         onClose={() => setIsPaymentModalOpen(false)}
         planName={selectedPlan.name}
-        amount={typeof selectedPlan.price === 'number' ? Math.round(selectedPlan.price * 100) : 0}
+        amount={typeof selectedPlan.price === 'number' ? selectedPlan.price * 100 : 0}
       />
     </section>
   );

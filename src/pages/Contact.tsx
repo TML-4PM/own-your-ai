@@ -7,8 +7,8 @@ import AnimatedButton from '@/components/ui/AnimatedButton';
 import { Mail } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 
-// Contact email configuration - corrected
-const CONTACT_EMAIL = 'troy.latter@4pm.net.au';
+// Updated contact email
+const CONTACT_EMAIL = 'info@ownyourai.biz';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
