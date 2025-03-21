@@ -5,9 +5,11 @@ import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
 import { Check, Shield, DollarSign, FileCheck } from 'lucide-react';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Features = () => {
+  const navigate = useNavigate();
+  
   const featuresList = [
     {
       id: "brand-protection",
@@ -59,6 +61,10 @@ const Features = () => {
     }
   ];
 
+  const handleStartFeature = () => {
+    navigate('/get-started');
+  };
+
   return (
     <div className="relative min-h-screen overflow-x-hidden">
       <BlurredBackground />
@@ -104,11 +110,9 @@ const Features = () => {
                     ))}
                   </ul>
                   
-                  <Link to="/get-started">
-                    <AnimatedButton>
-                      Start Using This Feature
-                    </AnimatedButton>
-                  </Link>
+                  <AnimatedButton onClick={handleStartFeature}>
+                    Start Using This Feature
+                  </AnimatedButton>
                 </div>
               </div>
             ))}

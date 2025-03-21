@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 
 // Contact email configuration - corrected
@@ -74,37 +74,16 @@ const Contact = () => {
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Email</h3>
                     <p className="text-muted-foreground">{CONTACT_EMAIL}</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-5">
-                    <Phone className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                    <p className="text-muted-foreground">+1 (555) 123-4567</p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start">
-                  <div className="bg-primary/10 p-3 rounded-full mr-5">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Office</h3>
-                    <p className="text-muted-foreground">
-                      123 AI Protection Street<br />
-                      Innovation District<br />
-                      Tech City, TC 12345
+                    <p className="text-sm text-muted-foreground mt-2">
+                      For all inquiries, please email us directly. We aim to respond to all messages within 24 hours.
                     </p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-4">Office Hours</h3>
-                <p className="text-muted-foreground mb-2">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <h3 className="text-xl font-semibold mb-4">Business Hours</h3>
+                <p className="text-muted-foreground mb-2">Monday - Friday: 9:00 AM - 6:00 PM AEST</p>
                 <p className="text-muted-foreground">Saturday - Sunday: Closed</p>
               </div>
             </div>

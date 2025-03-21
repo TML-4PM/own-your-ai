@@ -55,9 +55,9 @@ const Blog = () => {
       <main className="pt-24 pb-16 px-6 md:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Blog</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">AI Protection Insights</h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Insights, updates, and education on AI protection and intellectual property
+              Expert articles, case studies, and updates on protecting your AI-generated intellectual property
             </p>
           </div>
           

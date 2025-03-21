@@ -1,7 +1,7 @@
+
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Database, Shield, Zap } from 'lucide-react';
 import AnimatedButton from './ui/AnimatedButton';
-import { toast } from './ui/use-toast';
 import { useNavigate } from 'react-router-dom';
 
 // Contact email configuration - corrected
@@ -32,7 +32,7 @@ const FeatureShowcase: React.FC = () => {
 
   // Navigate to features page instead of showing toast
   const handleLearnMore = () => {
-    navigate('/features');
+    navigate('/get-started');
   };
 
   return (
@@ -94,7 +94,7 @@ const FeatureShowcase: React.FC = () => {
             </div>
             
             <AnimatedButton onClick={handleLearnMore} className="group">
-              <span>Learn how it works</span>
+              <span>Get Started</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </AnimatedButton>
           </div>
@@ -102,20 +102,62 @@ const FeatureShowcase: React.FC = () => {
           {/* Image/Dashboard Mock */}
           <div ref={imageRef} className="w-full lg:w-1/2 animate-fade-up transition-all duration-700" style={{ animationDelay: '200ms' }}>
             <div className="glass-card rounded-2xl overflow-hidden shadow-xl">
-              {/* Dashboard mockup - visualized as a colored rectangle for now */}
+              {/* Dashboard mockup - visualized with the AI Protection Dashboard */}
               <div className="aspect-[16/9] bg-gradient-to-br from-primary/20 via-blue-400/20 to-violet-500/20 rounded-lg flex items-center justify-center relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-32 h-32 mx-auto bg-white/10 backdrop-blur-md rounded-2xl flex items-center justify-center mb-4 animate-pulse-slow">
-                      <Shield className="h-16 w-16 text-primary" />
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="w-full max-w-md mx-auto bg-background/80 backdrop-blur-md rounded-xl shadow-lg p-4 mb-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <h3 className="text-lg font-semibold">AI Protection Dashboard</h3>
+                      <div className="flex space-x-2">
+                        <span className="h-3 w-3 bg-red-500 rounded-full"></span>
+                        <span className="h-3 w-3 bg-yellow-500 rounded-full"></span>
+                        <span className="h-3 w-3 bg-green-500 rounded-full"></span>
+                      </div>
                     </div>
-                    <h3 className="text-xl font-semibold">AI Protection Dashboard</h3>
-                    <p className="text-sm text-muted-foreground">(Visualization placeholder)</p>
+                    
+                    <div className="mb-4">
+                      <div className="h-2 bg-primary/50 rounded-full w-3/4 mb-2"></div>
+                      <div className="h-2 bg-primary/30 rounded-full w-1/2 mb-2"></div>
+                      <div className="h-2 bg-primary/20 rounded-full w-2/3"></div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="bg-background/60 p-2 rounded-lg">
+                        <div className="flex items-center justify-between">
+                          <Shield className="h-5 w-5 text-primary" />
+                          <span className="text-xs font-medium">92%</span>
+                        </div>
+                        <div className="text-xs mt-1">Protected Assets</div>
+                      </div>
+                      <div className="bg-background/60 p-2 rounded-lg">
+                        <div className="flex items-center justify-between">
+                          <Zap className="h-5 w-5 text-yellow-500" />
+                          <span className="text-xs font-medium">3</span>
+                        </div>
+                        <div className="text-xs mt-1">Alerts Today</div>
+                      </div>
+                    </div>
+                    
+                    <div className="bg-background/60 p-2 rounded-lg mb-3">
+                      <div className="flex justify-between items-center mb-1">
+                        <span className="text-xs">Scan Progress</span>
+                        <span className="text-xs font-medium">78%</span>
+                      </div>
+                      <div className="h-1.5 bg-background/80 rounded-full overflow-hidden">
+                        <div className="h-full bg-primary rounded-full" style={{ width: '78%' }}></div>
+                      </div>
+                    </div>
+                    
+                    <div className="text-center">
+                      <div className="inline-flex items-center px-2 py-1 rounded-full bg-green-500/20 text-green-500 text-xs">
+                        All systems operational
+                      </div>
+                    </div>
                   </div>
                 </div>
                 
                 {/* Grid pattern overlay */}
-                <div className="absolute inset-0 opacity-20" 
+                <div className="absolute inset-0 opacity-10" 
                     style={{
                       backgroundImage: "url(/src/assets/patterns/grid.svg)",
                       backgroundSize: "40px 40px"
