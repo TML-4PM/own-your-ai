@@ -1,11 +1,10 @@
-
 import React, { useRef, useEffect } from 'react';
 import { ArrowRight, Database, Shield, Zap } from 'lucide-react';
 import AnimatedButton from './ui/AnimatedButton';
 import { useNavigate } from 'react-router-dom';
 
 // Contact email configuration - corrected
-const CONTACT_EMAIL = 'troy.latter@4pm.net.au';
+const CONTACT_EMAIL = 'info@ownyourai.biz';
 
 const FeatureShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);

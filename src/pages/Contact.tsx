@@ -1,16 +1,11 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
-import AnimatedButton from '@/components/ui/AnimatedButton';
-import { Mail } from 'lucide-react';
-import { toast } from '@/components/ui/use-toast';
-
-// Updated contact email
-const CONTACT_EMAIL = 'info@ownyourai.biz';
+import { Mail, Send } from 'lucide-react';
 
 const Contact = () => {
+  const contactEmail = 'info@ownyourai.biz';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -30,7 +25,7 @@ const Contact = () => {
 
     // Simulate form submission
     setTimeout(() => {
-      console.log('Contact form submitted:', formData, 'to', CONTACT_EMAIL);
+      console.log('Contact form submitted:', formData, 'to', contactEmail);
       toast({
         title: "Message Sent",
         description: `Thank you for your message. We'll get back to you as soon as possible.`,
@@ -73,7 +68,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold mb-2">Email</h3>
-                    <p className="text-muted-foreground">{CONTACT_EMAIL}</p>
+                    <p className="text-muted-foreground">{contactEmail}</p>
                     <p className="text-sm text-muted-foreground mt-2">
                       For all inquiries, please email us directly. We aim to respond to all messages within 24 hours.
                     </p>
