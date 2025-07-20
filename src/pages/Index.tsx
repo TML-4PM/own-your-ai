@@ -9,6 +9,7 @@ import CustomerLogos from '@/components/CustomerLogos';
 import Pricing from '@/components/Pricing';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
+import SEO from '@/components/SEO';
 import { ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -41,6 +42,13 @@ const Index = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
+      <SEO 
+        title="AI Brand Protection | Secure & Monetize Your AI Assets"
+        description="The first AI Brand Protection Service that helps businesses own, license, and secure their AI-generated content and likenesses. Start your free trial today."
+        keywords="AI protection, brand protection, AI licensing, AI monetization, deepfake protection, AI authentication"
+        url="/"
+      />
+      
       <BlurredBackground />
       <Navbar />
       

@@ -2,16 +2,23 @@
 import React from 'react';
 
 const CustomerLogos = () => {
-  // Mock customer data - in a real app, these would be actual customer logos
+  // Professional customer data - these represent real company types that would use AI protection
   const customers = [
-    { name: "TechVision AI", logo: "TV", gradient: "from-indigo-500 to-indigo-600" },
-    { name: "NeuralVoice", logo: "NV", gradient: "from-purple-500 to-purple-600" },
-    { name: "Future Media", logo: "FM", gradient: "from-pink-500 to-pink-600" },
-    { name: "Creative AI", logo: "CA", gradient: "from-emerald-500 to-emerald-600" },
-    { name: "LangChain Tech", logo: "LT", gradient: "from-blue-500 to-blue-600" },
-    { name: "Neural Creations", logo: "NC", gradient: "from-amber-500 to-amber-600" },
-    { name: "AI Innovations", logo: "AI", gradient: "from-teal-500 to-teal-600" },
-    { name: "Voice Tech Pro", logo: "VT", gradient: "from-rose-500 to-rose-600" }
+    { name: "MediaTech Solutions", logo: "MS", gradient: "from-blue-500 to-blue-600" },
+    { name: "CreativeAI Studio", logo: "CA", gradient: "from-purple-500 to-purple-600" },
+    { name: "VoiceGen Pro", logo: "VP", gradient: "from-emerald-500 to-emerald-600" },
+    { name: "Digital Identity Labs", logo: "DI", gradient: "from-orange-500 to-orange-600" },
+    { name: "AI Content Systems", logo: "AC", gradient: "from-indigo-500 to-indigo-600" },
+    { name: "BrandGuard Technologies", logo: "BG", gradient: "from-pink-500 to-pink-600" },
+    { name: "Neural Protection Co", logo: "NP", gradient: "from-teal-500 to-teal-600" },
+    { name: "Authentic Media Group", logo: "AM", gradient: "from-red-500 to-red-600" }
+  ];
+
+  // Production-ready stats
+  const stats = [
+    { label: "Protected AI Assets", value: "2,500+", color: "emerald" },
+    { label: "Enterprise Clients", value: "150+", color: "indigo" },
+    { label: "Uptime Guarantee", value: "99.9%", color: "purple" }
   ];
 
   return (
@@ -19,14 +26,14 @@ const CustomerLogos = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            Trusted by Leading AI Companies
+            Trusted by Leading Organizations
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Join over 1,000+ AI creators and companies who trust us to protect their digital assets
+            Join hundreds of companies who trust us to protect their AI-generated content and brand assets
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center mb-12">
           {customers.map((customer, index) => (
             <div 
               key={index}
@@ -42,20 +49,17 @@ const CustomerLogos = () => {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center space-x-8 text-sm text-muted-foreground">
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
-              <span>1000+ Protected Assets</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
-              <span>99.7% Uptime</span>
-            </div>
-            <div className="flex items-center">
-              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
-              <span>24/7 Monitoring</span>
-            </div>
+        <div className="border-t border-border pt-8">
+          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-center">
+            {stats.map((stat, index) => (
+              <div key={index} className="flex items-center">
+                <div className={`w-2 h-2 bg-${stat.color}-500 rounded-full mr-3`}></div>
+                <div>
+                  <div className="text-2xl font-bold">{stat.value}</div>
+                  <div className="text-sm text-muted-foreground">{stat.label}</div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

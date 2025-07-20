@@ -1,10 +1,11 @@
+
 import React, { useEffect, useRef } from 'react';
 import AnimatedButton from './ui/AnimatedButton';
 import { ArrowRight, Shield, DollarSign, FileCheck } from 'lucide-react';
 import { toast } from './ui/use-toast';
 import { Link, useNavigate } from 'react-router-dom';
 
-// Contact email configuration - corrected
+// Contact email configuration
 const CONTACT_EMAIL = 'troy.latter@4pm.net.au';
 
 const Hero: React.FC = () => {
@@ -87,18 +88,26 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // Navigate to Free Trial page instead of Get Started
+  // Navigate to Free Trial page
   const handleStartFreeTrial = () => {
     navigate('/free-trial');
   };
 
   // Handle Schedule Demo button click
   const handleScheduleDemo = () => {
-    console.log(`Demo request submitted to: ${CONTACT_EMAIL}`);
+    // In production, this would integrate with calendar booking system
     toast({
       title: "Demo Scheduled",
-      description: `Thank you for scheduling a demo. Our team at ${CONTACT_EMAIL} will contact you shortly with available times.`,
+      description: `Thank you for scheduling a demo. Our team will contact you shortly with available times.`,
     });
+    
+    // Optional: Send to analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'demo_requested', {
+        event_category: 'engagement',
+        event_label: 'hero_cta'
+      });
+    }
   };
 
   return (
@@ -235,6 +244,7 @@ const Hero: React.FC = () => {
           src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b" 
           alt="Technology background" 
           className="w-full h-full object-cover"
+          loading="lazy"
         />
       </div>
     </div>
