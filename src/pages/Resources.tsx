@@ -1,15 +1,26 @@
-
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
+import LeadCaptureModal from '@/components/LeadCaptureModal';
 import { Link } from 'react-router-dom';
 import AnimatedButton from '@/components/ui/AnimatedButton';
-import { ArrowRight, BookOpen, Download, FileText, Filter, Search } from 'lucide-react';
+import { ArrowRight, BookOpen, Download, FileText, Filter, Search, Lock } from 'lucide-react';
 
 const Resources = () => {
   const [activeTab, setActiveTab] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
+  const [leadCaptureModal, setLeadCaptureModal] = useState<{
+    isOpen: boolean;
+    contentTitle: string;
+    contentDescription: string;
+    contentType: 'whitepaper' | 'guide' | 'case-study' | 'tool';
+  }>({
+    isOpen: false,
+    contentTitle: '',
+    contentDescription: '',
+    contentType: 'guide'
+  });
   
   const resources = [
     {
@@ -17,42 +28,48 @@ const Resources = () => {
       description: "Learn the fundamentals of safeguarding your AI-generated content and intellectual property in this comprehensive guide.",
       category: "guide",
       image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
-      date: "May 15, 2023"
+      date: "May 15, 2023",
+      isPremium: true
     },
     {
       title: "Legal Framework for AI Ownership",
       description: "Explore the current legal landscape surrounding AI intellectual property and how it affects creators and businesses.",
       category: "whitepaper",
       image: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=2012&auto=format&fit=crop",
-      date: "June 3, 2023"
+      date: "June 3, 2023",
+      isPremium: true
     },
     {
       title: "AI Protection ROI Calculator",
       description: "Calculate the potential return on investment from implementing proper AI asset protection for your business.",
       category: "tool",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop",
-      date: "July 21, 2023"
+      date: "July 21, 2023",
+      isPremium: false
     },
     {
       title: "Case Study: How TechVision Saved $2M with AI Protection",
       description: "Read how one AI company prevented unauthorized use of their models and reclaimed lost revenue.",
       category: "case-study",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop",
-      date: "August 9, 2023"
+      date: "August 9, 2023",
+      isPremium: true
     },
     {
       title: "Blockchain Verification for AI Assets Explained",
       description: "Understand how blockchain technology is revolutionizing the verification and protection of AI-generated content.",
       category: "guide",
       image: "https://images.unsplash.com/photo-1639762681057-408e52192e55?q=80&w=1932&auto=format&fit=crop",
-      date: "September 14, 2023"
+      date: "September 14, 2023",
+      isPremium: false
     },
     {
       title: "The Future of AI Intellectual Property Protection",
       description: "Expert insights on emerging trends and technologies in the field of AI asset protection.",
       category: "whitepaper",
       image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop",
-      date: "October 5, 2023"
+      date: "October 5, 2023",
+      isPremium: true
     },
   ];
 
@@ -75,6 +92,22 @@ const Resources = () => {
         return <Download className="h-5 w-5 text-emerald-500" />;
       default:
         return <FileText className="h-5 w-5 text-gray-500" />;
+    }
+  };
+
+  const handleResourceClick = (resource: any) => {
+    if (resource.isPremium) {
+      setLeadCaptureModal({
+        isOpen: true,
+        contentTitle: resource.title,
+        contentDescription: resource.description,
+        contentType: resource.category as 'whitepaper' | 'guide' | 'case-study' | 'tool'
+      });
+    } else {
+      // Navigate to resource or open directly for free resources
+      if (resource.category === 'tool' && resource.title.includes('Calculator')) {
+        window.location.href = '/calculator';
+      }
     }
   };
 
@@ -137,10 +170,10 @@ const Resources = () => {
           {/* Resources Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {filteredResources.map((resource, index) => (
-              <Link 
-                to="/resources/details" 
+              <div 
                 key={index}
-                className="group bg-background/70 backdrop-blur-sm border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full"
+                onClick={() => handleResourceClick(resource)}
+                className="group bg-background/70 backdrop-blur-sm border border-border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full cursor-pointer"
               >
                 <div className="h-48 overflow-hidden relative">
                   <img 
@@ -152,6 +185,12 @@ const Resources = () => {
                     {getResourceIcon(resource.category)}
                     <span className="ml-1 capitalize">{resource.category.replace('-', ' ')}</span>
                   </div>
+                  {resource.isPremium && (
+                    <div className="absolute top-4 right-4 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full px-3 py-1 text-xs font-medium flex items-center">
+                      <Lock className="h-3 w-3 mr-1" />
+                      Premium
+                    </div>
+                  )}
                 </div>
                 <div className="p-6 flex-grow flex flex-col">
                   <div className="text-sm text-muted-foreground mb-3">{resource.date}</div>
@@ -162,11 +201,11 @@ const Resources = () => {
                     {resource.description}
                   </p>
                   <div className="flex items-center text-primary text-sm font-medium">
-                    <span>Read more</span>
+                    <span>{resource.isPremium ? 'Get Access' : 'Read more'}</span>
                     <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
-              </Link>
+              </div>
             ))}
           </div>
           
@@ -269,6 +308,14 @@ const Resources = () => {
       </main>
       
       <Footer />
+
+      <LeadCaptureModal
+        isOpen={leadCaptureModal.isOpen}
+        onClose={() => setLeadCaptureModal(prev => ({ ...prev, isOpen: false }))}
+        contentTitle={leadCaptureModal.contentTitle}
+        contentDescription={leadCaptureModal.contentDescription}
+        contentType={leadCaptureModal.contentType}
+      />
     </div>
   );
 };

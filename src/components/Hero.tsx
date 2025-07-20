@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import AnimatedButton from './ui/AnimatedButton';
 import { ArrowRight, Shield, DollarSign, FileCheck } from 'lucide-react';
@@ -88,9 +87,9 @@ const Hero: React.FC = () => {
     };
   }, []);
 
-  // Navigate to Get Started page
-  const handleGetStarted = () => {
-    navigate('/get-started');
+  // Navigate to Free Trial page instead of Get Started
+  const handleStartFreeTrial = () => {
+    navigate('/free-trial');
   };
 
   // Handle Schedule Demo button click
@@ -113,9 +112,9 @@ const Hero: React.FC = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-24">
         <div className="flex flex-col items-center text-center">
-          <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-500 text-sm font-medium mb-6 animate-fade-in">
-            <span className="mr-2 bg-indigo-500 text-white px-2 py-0.5 rounded-full text-xs">New</span>
-            Introducing AI Brand Protection
+          <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 text-sm font-medium mb-6 animate-fade-in">
+            <span className="mr-2 bg-emerald-500 text-white px-2 py-0.5 rounded-full text-xs">Free Trial</span>
+            14 Days of Complete AI Protection
           </div>
           
           <h1 
@@ -131,11 +130,11 @@ const Hero: React.FC = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 mb-16 animate-fade-up" style={{ animationDelay: '1000ms' }}>
             <AnimatedButton 
-              onClick={handleGetStarted}
+              onClick={handleStartFreeTrial}
               size="lg" 
-              className="group bg-gradient-to-r from-indigo-500 to-purple-600 hover:from-indigo-600 hover:to-purple-700"
+              className="group bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700"
             >
-              <span>Get Started</span>
+              <span>Start Free Trial</span>
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </AnimatedButton>
             <AnimatedButton 
@@ -146,6 +145,21 @@ const Hero: React.FC = () => {
             >
               Schedule a Demo
             </AnimatedButton>
+          </div>
+
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12 text-sm text-muted-foreground animate-fade-up" style={{ animationDelay: '1200ms' }}>
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></div>
+              <span>No credit card required</span>
+            </div>
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-indigo-500 rounded-full mr-2"></div>
+              <span>Full feature access</span>
+            </div>
+            <div className="flex items-center">
+              <div className="w-2 h-2 bg-purple-500 rounded-full mr-2"></div>
+              <span>Cancel anytime</span>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">

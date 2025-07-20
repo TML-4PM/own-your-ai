@@ -5,6 +5,7 @@ import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import FeatureShowcase from '@/components/FeatureShowcase';
 import CustomerTestimonials from '@/components/CustomerTestimonials';
+import CustomerLogos from '@/components/CustomerLogos';
 import Pricing from '@/components/Pricing';
 import Footer from '@/components/Footer';
 import BlurredBackground from '@/components/BlurredBackground';
@@ -45,6 +46,7 @@ const Index = () => {
       
       <main>
         <Hero />
+        <CustomerLogos />
         <Services />
         <FeatureShowcase />
         <CustomerTestimonials limit={3} />
