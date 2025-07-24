@@ -19,8 +19,8 @@ export const usePerformance = () => {
             tcp: navEntry.connectEnd - navEntry.connectStart,
             ttfb: navEntry.responseStart - navEntry.requestStart,
             download: navEntry.responseEnd - navEntry.responseStart,
-            domReady: navEntry.domContentLoadedEventEnd - navEntry.navigationStart,
-            loadComplete: navEntry.loadEventEnd - navEntry.navigationStart,
+            domReady: navEntry.domContentLoadedEventEnd - navEntry.fetchStart,
+            loadComplete: navEntry.loadEventEnd - navEntry.fetchStart,
           };
           
           // In production, send to analytics

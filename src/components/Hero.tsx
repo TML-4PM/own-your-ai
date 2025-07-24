@@ -102,8 +102,8 @@ const Hero: React.FC = () => {
     });
     
     // Optional: Send to analytics
-    if (typeof gtag !== 'undefined') {
-      gtag('event', 'demo_requested', {
+    if (typeof window !== 'undefined' && (window as any).gtag) {
+      (window as any).gtag('event', 'demo_requested', {
         event_category: 'engagement',
         event_label: 'hero_cta'
       });
