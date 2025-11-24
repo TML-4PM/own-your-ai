@@ -60,17 +60,14 @@ const Navbar = () => {
   return (
     <nav 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-background/70 backdrop-blur-lg border-b border-white/10 py-3' : 'py-5'
+        scrolled ? 'bg-background/80 backdrop-blur-md border-b border-border py-3' : 'bg-background/50 backdrop-blur-sm py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <div className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent flex items-center">
-                <span className="w-8 h-8 rounded-lg bg-gradient-to-r from-indigo-600 to-pink-600 flex items-center justify-center text-white mr-2">AI</span>
-                OwnYourAI
-              </div>
+              <span className="text-xl font-semibold tracking-tight">OwnYourAI</span>
             </Link>
           </div>
 

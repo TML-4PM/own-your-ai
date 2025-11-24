@@ -5,67 +5,58 @@ import { Facebook, Twitter, Github, Linkedin, Instagram, Youtube } from 'lucide-
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-muted/30 py-16 px-6 md:px-8">
+    <footer className="border-t border-border py-16 px-6 md:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* Brand/Company Info */}
           <div className="md:col-span-1">
-            <Link to="/" className="text-2xl font-display font-semibold mb-6 inline-block">
+            <Link to="/" className="text-xl font-semibold mb-6 inline-block">
               OwnMyAI.org
             </Link>
-            <p className="text-muted-foreground mb-6">
-              Your AI, Your Business, Your Rules. Protect and monetize your AI-generated assets.
+            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
+              Protect and monetize your AI-generated assets.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/40 rounded-full">
+            <div className="flex space-x-3">
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Facebook className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/40 rounded-full">
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/40 rounded-full">
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/40 rounded-full">
+              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
                 <Linkedin className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/40 rounded-full">
-                <Instagram className="h-5 w-5" />
-              </a>
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors p-2 bg-background/40 rounded-full">
-                <Youtube className="h-5 w-5" />
               </a>
             </div>
           </div>
           
-          {/* Navigation Links */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Product</h3>
-            <ul className="space-y-3">
-              <li><Link to="/features" className="text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
-              <li><Link to="/pricing" className="text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
-              <li><Link to="/dns-settings" className="text-muted-foreground hover:text-foreground transition-colors">DNS Settings</Link></li>
-              <li><Link to="/case-studies" className="text-muted-foreground hover:text-foreground transition-colors">Case Studies</Link></li>
+            <h3 className="font-medium text-sm mb-4">Product</h3>
+            <ul className="space-y-2">
+              <li><Link to="/features" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Features</Link></li>
+              <li><Link to="/pricing" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Pricing</Link></li>
+              <li><Link to="/case-studies" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Case Studies</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-4">Company</h3>
-            <ul className="space-y-3">
-              <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-              <li><Link to="/blog" className="text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
-              <li><Link to="/careers" className="text-muted-foreground hover:text-foreground transition-colors">Careers</Link></li>
-              <li><Link to="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
+            <h3 className="font-medium text-sm mb-4">Company</h3>
+            <ul className="space-y-2">
+              <li><Link to="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
+              <li><Link to="/blog" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Blog</Link></li>
+              <li><Link to="/careers" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Careers</Link></li>
+              <li><Link to="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
             </ul>
           </div>
           
           <div>
-            <h3 className="font-semibold text-lg mb-4">Legal</h3>
-            <ul className="space-y-3">
-              <li><Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms-of-service" className="text-muted-foreground hover:text-foreground transition-colors">Terms of Service</Link></li>
-              <li><Link to="/cookie-policy" className="text-muted-foreground hover:text-foreground transition-colors">Cookie Policy</Link></li>
-              <li><Link to="/security" className="text-muted-foreground hover:text-foreground transition-colors">Security</Link></li>
+            <h3 className="font-medium text-sm mb-4">Legal</h3>
+            <ul className="space-y-2">
+              <li><Link to="/privacy-policy" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Privacy</Link></li>
+              <li><Link to="/terms-of-service" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Terms</Link></li>
+              <li><Link to="/security" className="text-sm text-muted-foreground hover:text-foreground transition-colors">Security</Link></li>
             </ul>
           </div>
         </div>

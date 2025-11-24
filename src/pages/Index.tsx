@@ -8,7 +8,6 @@ import CustomerTestimonials from '@/components/CustomerTestimonials';
 import CustomerLogos from '@/components/CustomerLogos';
 import Pricing from '@/components/Pricing';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import SEO from '@/components/SEO';
 import { ArrowUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -49,7 +48,6 @@ const Index = () => {
         url="/"
       />
       
-      <BlurredBackground />
       <Navbar />
       
       <main>

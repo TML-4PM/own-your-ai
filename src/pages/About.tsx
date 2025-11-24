@@ -2,7 +2,6 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -10,7 +9,6 @@ import { Link } from 'react-router-dom';
 const About = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="pt-24 pb-16 px-6 md:px-8">
