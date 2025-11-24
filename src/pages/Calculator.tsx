@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { ArrowRight, Calculator, Download, HelpCircle } from 'lucide-react';
 import { 
@@ -110,7 +109,6 @@ const ROICalculator = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="pt-28 pb-20 px-6 md:px-8">

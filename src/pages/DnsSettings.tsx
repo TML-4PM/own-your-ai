@@ -6,7 +6,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/
 import { useForm } from 'react-hook-form';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import GlassCard from '@/components/ui/GlassCard';
 import { Copy, Globe, Server, Check, Info, AlertTriangle, Plus } from 'lucide-react';
 import { useState } from 'react';
@@ -154,7 +153,6 @@ const DnsSettings = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="max-w-7xl mx-auto px-4 py-24 md:py-32">

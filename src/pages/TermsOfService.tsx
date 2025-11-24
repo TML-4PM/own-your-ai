@@ -2,13 +2,11 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import { Shield, FileText, Users, Key, AlertTriangle, PenTool } from 'lucide-react';
 
 const TermsOfService = () => {
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="pt-32 pb-24 px-6 md:px-10 lg:px-16">
