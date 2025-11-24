@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import BlurredBackground from "@/components/BlurredBackground";
 import { Mail, Send, X, MessageSquare, MapPin, HelpCircle } from "lucide-react";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import { toast } from "@/components/ui/use-toast";
@@ -52,7 +51,6 @@ const Contact = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="pt-24 pb-16 px-6 md:px-8">
