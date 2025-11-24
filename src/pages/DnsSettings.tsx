@@ -42,7 +42,7 @@ const DnsSettings = () => {
   const [domains, setDomains] = useState<Domain[]>([
     {
       id: 'ownmyai',
-      name: 'OwnMyAI.biz',
+      name: 'OwnMyAI.org',
       records: [
         {
           type: 'A',
@@ -77,7 +77,7 @@ const DnsSettings = () => {
     },
     {
       id: 'ownyourai',
-      name: 'OwnYourAI.biz',
+      name: 'OwnYourAI.org',
       records: [
         {
           type: 'A',
@@ -161,7 +161,7 @@ const DnsSettings = () => {
         <div className="text-center mb-12">
           <h1 className="text-3xl md:text-5xl font-bold mb-4">AWS Route 53 DNS Settings</h1>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Configure your AWS Route 53 DNS settings for OwnMyAI.biz and OwnYourAI.biz domains to point to your hosting service.
+            Configure your AWS Route 53 DNS settings for OwnMyAI.org and OwnYourAI.org domains to point to your hosting service.
           </p>
         </div>
 
@@ -174,7 +174,7 @@ const DnsSettings = () => {
                 <ol className="list-decimal list-inside space-y-3 ml-2 text-muted-foreground">
                   <li>Log into your AWS Management Console and navigate to Route 53 service.</li>
                   <li>In the Route 53 dashboard, click on "Hosted zones" in the left navigation menu.</li>
-                  <li>Click "Create hosted zone", enter your domain name (e.g., ownmyai.biz), and click "Create".</li>
+                  <li>Click "Create hosted zone", enter your domain name (e.g., ownmyai.org), and click "Create".</li>
                   <li>After creating the hosted zone, you'll need to update your domain's name servers at your domain registrar to use AWS's name servers.</li>
                   <li>Find the NS (Name Server) records in your new hosted zone and copy them.</li>
                   <li>Go to your domain registrar's website and update the domain's name servers with the AWS name servers you copied.</li>
@@ -193,11 +193,11 @@ const DnsSettings = () => {
           <TabsList className="mb-8 w-full justify-center">
             <TabsTrigger value="ownmyai" className="flex items-center gap-2 px-4 py-2">
               <Globe size={20} />
-              OwnMyAI.biz
+              OwnMyAI.org
             </TabsTrigger>
             <TabsTrigger value="ownyourai" className="flex items-center gap-2 px-4 py-2">
               <Globe size={20} />
-              OwnYourAI.biz
+              OwnYourAI.org
             </TabsTrigger>
           </TabsList>
 

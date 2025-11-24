@@ -4,7 +4,7 @@ import AnimatedButton from './ui/AnimatedButton';
 import { useNavigate } from 'react-router-dom';
 
 // Contact email configuration - corrected
-const CONTACT_EMAIL = 'info@ownyourai.biz';
+const CONTACT_EMAIL = 'info@ownyourai.org';
 
 const FeatureShowcase: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
