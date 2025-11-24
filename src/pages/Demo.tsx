@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import GlassCard from '@/components/ui/GlassCard';
 import { Shield, AlertTriangle, CheckCircle, Eye, Zap, TrendingUp, Clock, Users } from 'lucide-react';
@@ -92,7 +91,6 @@ const Demo = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="pt-28 pb-20 px-6 md:px-8">

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import LeadCaptureModal from '@/components/LeadCaptureModal';
 import { Link } from 'react-router-dom';
 import AnimatedButton from '@/components/ui/AnimatedButton';
@@ -113,7 +112,6 @@ const Resources = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="pt-28 pb-20 px-6 md:px-8">

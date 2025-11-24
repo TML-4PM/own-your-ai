@@ -3,7 +3,6 @@ import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { Home, ArrowLeft, Search, HelpCircle } from 'lucide-react';
 
@@ -19,7 +18,6 @@ const NotFound = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="flex items-center justify-center min-h-screen pt-24 pb-20 px-6 md:px-10">

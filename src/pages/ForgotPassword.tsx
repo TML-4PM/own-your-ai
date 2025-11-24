@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import BlurredBackground from '@/components/BlurredBackground';
 import AnimatedButton from '@/components/ui/AnimatedButton';
 import { toast } from '@/components/ui/use-toast';
 
@@ -32,7 +31,6 @@ const ForgotPassword = () => {
 
   return (
     <div className="relative min-h-screen overflow-x-hidden">
-      <BlurredBackground />
       <Navbar />
       
       <main className="flex justify-center items-center min-h-screen pt-24 pb-20 px-6 md:px-10">
