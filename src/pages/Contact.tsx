@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import BlurredBackground from "@/components/BlurredBackground";
-import { Mail, Send, X, MessageSquare, PhoneCall, MapPin, Clock, HelpCircle } from "lucide-react";
+import { Mail, Send, X, MessageSquare, MapPin, HelpCircle } from "lucide-react";
 import AnimatedButton from "@/components/ui/AnimatedButton";
 import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
-  const contactEmail = 'info@ownyourai.biz';
+  const contactEmail = 'troy@ownyourai.org';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -87,19 +87,6 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start">
-                  <div className="bg-purple-500/20 p-3 rounded-full mr-5">
-                    <PhoneCall className="h-6 w-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">Phone</h3>
-                    <p className="text-purple-600 font-medium">+1 (888) AI-PROTECT</p>
-                    <p className="text-sm text-muted-foreground mt-2">
-                      Available Monday through Friday, 9am to 6pm AEST.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start">
                   <div className="bg-pink-500/20 p-3 rounded-full mr-5">
                     <MapPin className="h-6 w-6 text-pink-600" />
                   </div>
@@ -111,15 +98,6 @@ const Contact = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-              
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold mb-4 flex items-center">
-                  <Clock className="h-5 w-5 mr-2 text-indigo-500" />
-                  Business Hours
-                </h3>
-                <p className="text-muted-foreground mb-2">Monday - Friday: 9:00 AM - 6:00 PM AEST</p>
-                <p className="text-muted-foreground">Saturday - Sunday: Closed</p>
               </div>
             </div>
             
