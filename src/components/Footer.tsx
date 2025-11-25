@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           {/* Brand/Company Info */}
           <div className="md:col-span-1">
             <Link to="/" className="flex items-center gap-2 mb-6">
-              <img src="/droid-icon.webp" alt="OwnMyAI" className="h-8 w-8" />
+              <img src="/droid-icon.webp" alt="OwnMyAI" className="h-8 w-8 object-contain rounded" />
               <span className="text-xl font-semibold">OwnMyAI</span>
             </Link>
             <p className="text-muted-foreground text-sm mb-6 max-w-xs">

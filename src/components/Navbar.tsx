@@ -67,7 +67,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <img src="/droid-icon.webp" alt="OwnMyAI" className="h-8 w-8" />
+              <img src="/droid-icon.webp" alt="OwnMyAI" className="h-8 w-8 object-contain rounded" />
               <span className="text-xl font-semibold tracking-tight">OwnMyAI</span>
             </Link>
           </div>
