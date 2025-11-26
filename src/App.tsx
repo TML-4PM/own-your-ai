@@ -35,6 +35,7 @@ const Resources = lazy(() => import("./pages/Resources"));
 const Calculator = lazy(() => import("./pages/Calculator"));
 const Demo = lazy(() => import("./pages/Demo"));
 const FreeTrial = lazy(() => import("./pages/FreeTrial"));
+const Admin = lazy(() => import("./pages/Admin"));
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -87,6 +88,7 @@ const App = () => {
                   <Route path="/pricing" element={<LazyRoute><Pricing /></LazyRoute>} />
                   <Route path="/demo" element={<LazyRoute><Demo /></LazyRoute>} />
                   <Route path="/free-trial" element={<LazyRoute><FreeTrial /></LazyRoute>} />
+                  <Route path="/admin" element={<LazyRoute><Admin /></LazyRoute>} />
                   <Route path="/dns-settings" element={<LazyRoute><DnsSettings /></LazyRoute>} />
                   <Route path="/blog" element={<LazyRoute><Blog /></LazyRoute>} />
                   <Route path="/blog/:slug" element={<LazyRoute><BlogArticle /></LazyRoute>} />
