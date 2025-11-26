@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Facebook, Twitter, Github, Linkedin, Instagram, Youtube } from 'lucide-react';
+import { Mail, Twitter, Github, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -18,16 +18,16 @@ const Footer: React.FC = () => {
               Protect and monetize your AI-generated assets.
             </p>
             <div className="flex space-x-3">
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
-                <Facebook className="h-5 w-5" />
+              <a href="mailto:troy@ownyourai.org" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Email">
+                <Mail className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://twitter.com/TroyLatter" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Twitter">
                 <Twitter className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://github.com/TML-4PM" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </a>
-              <a href="#" className="text-muted-foreground hover:text-foreground transition-colors">
+              <a href="https://linkedin.com/in/theinnovater" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </a>
             </div>
