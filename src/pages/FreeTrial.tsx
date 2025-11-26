@@ -6,6 +6,7 @@ import AnimatedButton from '@/components/ui/AnimatedButton';
 import GlassCard from '@/components/ui/GlassCard';
 import { CheckCircle, ArrowRight, Shield, Eye, Zap } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 const FreeTrial = () => {
   const [formData, setFormData] = useState({
@@ -21,14 +22,58 @@ const FreeTrial = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      // Save to database
+      const { error: dbError } = await supabase
+        .from('free_trial_signups')
+        .insert([{
+          first_name: formData.firstName,
+          last_name: formData.lastName,
+          email: formData.email,
+          company: formData.company || null,
+          ai_use_case: formData.aiUseCase || null,
+        }]);
+
+      if (dbError) throw dbError;
+
+      // Send welcome email
+      const { error: emailError } = await supabase.functions.invoke('send-trial-email', {
+        body: {
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          email: formData.email,
+          company: formData.company,
+          aiUseCase: formData.aiUseCase,
+        },
+      });
+
+      if (emailError) {
+        console.error("Email send error:", emailError);
+        // Don't fail the whole process if email fails
+      }
+
       toast({
         title: "Free Trial Started!",
         description: "Check your email for login credentials and setup instructions.",
       });
+      
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        company: '',
+        aiUseCase: ''
+      });
+    } catch (error: any) {
+      console.error("Signup error:", error);
+      toast({
+        title: "Error",
+        description: error.message || "Something went wrong. Please try again.",
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 2000);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
