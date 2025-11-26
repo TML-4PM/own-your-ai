@@ -11,16 +11,16 @@ interface SEOProps {
 }
 
 const SEO: React.FC<SEOProps> = ({
-  title = "AI Brand Protection | Secure & Monetize Your AI Assets",
+  title = "OwnMyAI | Protect & Monetize Your AI Assets",
   description = "The first AI Brand Protection Service that helps businesses own, license, and secure their AI-generated content and likenesses. Start your free trial today.",
   keywords = "AI protection, brand protection, AI licensing, AI monetization, deepfake protection, AI authentication, digital rights",
   image = "/og-image.png",
-  url = "https://aiprotect.com",
+  url = "https://www.ownmyai.info",
   type = "website"
 }) => {
-  const fullTitle = title.includes('|') ? title : `${title} | AI Brand Protection`;
-  const fullUrl = url.startsWith('http') ? url : `https://aiprotect.com${url}`;
-  const fullImage = image.startsWith('http') ? image : `https://aiprotect.com${image}`;
+  const fullTitle = title.includes('|') ? title : `${title} | OwnMyAI`;
+  const fullUrl = url.startsWith('http') ? url : `https://www.ownmyai.info${url}`;
+  const fullImage = image.startsWith('http') ? image : `https://www.ownmyai.info${image}`;
 
   return (
     <Helmet>
@@ -29,7 +29,7 @@ const SEO: React.FC<SEOProps> = ({
       <meta name="description" content={description} />
       <meta name="keywords" content={keywords} />
       <meta name="robots" content="index, follow" />
-      <meta name="author" content="AI Brand Protection" />
+      <meta name="author" content="Tech 4 Humanity" />
       <link rel="canonical" href={fullUrl} />
 
       {/* Open Graph Tags */}
@@ -38,13 +38,14 @@ const SEO: React.FC<SEOProps> = ({
       <meta property="og:description" content={description} />
       <meta property="og:image" content={fullImage} />
       <meta property="og:url" content={fullUrl} />
-      <meta property="og:site_name" content="AI Brand Protection" />
+      <meta property="og:site_name" content="OwnMyAI" />
 
       {/* Twitter Card Tags */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={fullImage} />
+      <meta name="twitter:site" content="@ownmyai" />
 
       {/* Additional SEO Tags */}
       <meta name="theme-color" content="#6366f1" />
