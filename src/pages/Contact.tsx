@@ -117,6 +117,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
+                    autoComplete="off"
                     className="w-full px-4 py-3 border border-border rounded-md bg-background/50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
                 </div>
@@ -132,6 +133,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
+                    autoComplete="off"
                     className="w-full px-4 py-3 border border-border rounded-md bg-background/50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
                 </div>
@@ -147,6 +149,7 @@ const Contact = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     required
+                    autoComplete="off"
                     className="w-full px-4 py-3 border border-border rounded-md bg-background/50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
                 </div>
@@ -162,6 +165,7 @@ const Contact = () => {
                     onChange={handleChange}
                     required
                     rows={5}
+                    autoComplete="off"
                     className="w-full px-4 py-3 border border-border rounded-md bg-background/50 focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors"
                   />
                 </div>
