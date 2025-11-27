@@ -94,9 +94,9 @@ const CustomerLogos = () => {
   }, [emblaApi, autoplay]);
 
   return (
-    <section className="py-12 px-6 md:px-8">
+    <section className="py-16 px-6 md:px-8 bg-muted/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
             Trusted by Leading Organizations
           </h2>
@@ -106,13 +106,13 @@ const CustomerLogos = () => {
         </div>
         
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex gap-12">
+          <div className="flex items-center">
             {[...customers, ...customers].map((customer, index) => (
               <div 
                 key={`${customer.name}-${index}`}
-                className="flex-shrink-0 flex flex-col items-center group cursor-pointer min-w-[100px]"
+                className="flex-[0_0_120px] md:flex-[0_0_150px] mx-4 flex flex-col items-center group cursor-pointer"
               >
-                <div className="text-muted-foreground/60 group-hover:text-foreground transition-all duration-300 group-hover:scale-110">
+                <div className="text-muted-foreground/50 group-hover:text-primary transition-all duration-300 group-hover:scale-110">
                   {customer.logo}
                 </div>
                 <span className="text-xs text-muted-foreground mt-2 text-center group-hover:text-foreground transition-colors">
@@ -123,14 +123,12 @@ const CustomerLogos = () => {
           </div>
         </div>
 
-        <div className="border-t border-border pt-8 mt-8">
-          <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-center">
+        <div className="border-t border-border pt-10 mt-10">
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 text-center">
             {stats.map((stat, index) => (
-              <div key={index} className="flex items-center">
-                <div>
-                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
+              <div key={index} className="flex flex-col items-center">
+                <div className="text-3xl font-bold text-primary">{stat.value}</div>
+                <div className="text-sm text-muted-foreground">{stat.label}</div>
               </div>
             ))}
           </div>
