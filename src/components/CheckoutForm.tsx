@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react';
-import { CardElement, useStripe, useElements } from '@stripe/react-stripe-js';
 import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Label } from './ui/label';
 import { toast } from './ui/use-toast';
+import { supabase } from '@/integrations/supabase/client';
 
 interface CheckoutFormProps {
   amount: number;
@@ -17,61 +18,48 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   onSuccess,
   onCancel
 }) => {
-  const stripe = useStripe();
-  const elements = useElements();
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string | null>(null);
+  const [email, setEmail] = useState('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
-    if (!stripe || !elements) {
+    if (!email) {
+      toast({
+        title: 'Email Required',
+        description: 'Please enter your email address to continue.',
+        variant: 'destructive',
+      });
       return;
     }
 
-    setError(null);
     setIsLoading(true);
 
-    // Get the card element
-    const cardElement = elements.getElement(CardElement);
-
-    if (!cardElement) {
-      setIsLoading(false);
-      return;
-    }
-
     try {
-      // For testing, you can use these card numbers:
-      // Success: 4242 4242 4242 4242
-      // Decline: 4000 0000 0000 0002
-      
-      // In a real implementation, you would call your backend to create a payment intent
-      // and confirm the payment here using the clientSecret.
-      // 
-      // const { error, paymentMethod } = await stripe.createPaymentMethod({
-      //   type: 'card',
-      //   card: cardElement,
-      // });
-      
-      // Simulate a successful payment for demonstration purposes
-      setTimeout(() => {
-        // Simulate successful payment
-        toast({
-          title: 'Payment Successful',
-          description: `You have successfully subscribed to ${productName}`,
-        });
-        
-        console.log('Payment processed successfully for:', {
-          product: productName,
-          amount: amount / 100,
-        });
-        
-        setIsLoading(false);
-        if (onSuccess) onSuccess();
-      }, 2000);
-    } catch (err) {
+      const { data, error } = await supabase.functions.invoke('create-checkout-session', {
+        body: {
+          planName: productName,
+          amount: amount,
+          email: email,
+        },
+      });
+
+      if (error) {
+        throw error;
+      }
+
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('No checkout URL received');
+      }
+    } catch (err: any) {
       console.error('Payment error:', err);
-      setError('An error occurred while processing your payment. Please try again.');
+      toast({
+        title: 'Payment Error',
+        description: err.message || 'An error occurred while processing your payment. Please try again.',
+        variant: 'destructive',
+      });
       setIsLoading(false);
     }
   };
@@ -79,40 +67,27 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       <div className="space-y-2">
-        <label htmlFor="card-element" className="block text-sm font-medium">
-          Card Details
-        </label>
-        <div className="p-3 border rounded-md bg-background">
-          <CardElement 
-            id="card-element"
-            options={{
-              style: {
-                base: {
-                  fontSize: '16px',
-                  color: '#424770',
-                  '::placeholder': {
-                    color: '#aab7c4',
-                  },
-                },
-                invalid: {
-                  color: '#9e2146',
-                },
-              },
-            }}
-          />
-        </div>
-        {error && (
-          <p className="text-sm text-destructive mt-1">{error}</p>
-        )}
+        <Label htmlFor="email">Email Address</Label>
+        <Input
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+          autoComplete="off"
+          className="bg-background"
+        />
+        <p className="text-sm text-muted-foreground">
+          You'll be redirected to Stripe's secure checkout to complete your payment.
+        </p>
       </div>
 
-      <div className="mt-2 text-sm text-muted-foreground">
-        <p>For testing, use these card numbers:</p>
-        <ul className="list-disc pl-5 mt-1">
-          <li>Success: 4242 4242 4242 4242</li>
-          <li>Decline: 4000 0000 0000 0002</li>
-        </ul>
-        <p className="mt-1">Use any future expiration date, any 3-digit CVC, and any postal code.</p>
+      <div className="bg-muted/50 rounded-lg p-4">
+        <div className="flex justify-between items-center">
+          <span className="font-medium">{productName} Plan</span>
+          <span className="text-lg font-bold">${(amount / 100).toFixed(2)}/mo</span>
+        </div>
       </div>
 
       <div className="flex space-x-4">
@@ -127,9 +102,9 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
         <Button 
           type="submit" 
           className="flex-1"
-          disabled={!stripe || isLoading}
+          disabled={isLoading}
         >
-          {isLoading ? 'Processing...' : `Pay $${(amount / 100).toFixed(2)}`}
+          {isLoading ? 'Redirecting...' : 'Continue to Payment'}
         </Button>
       </div>
     </form>

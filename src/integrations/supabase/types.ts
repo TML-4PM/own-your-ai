@@ -44,6 +44,45 @@ export type Database = {
         }
         Relationships: []
       }
+      subscriptions: {
+        Row: {
+          amount_cents: number
+          created_at: string
+          id: string
+          plan_name: string
+          status: string
+          stripe_customer_id: string | null
+          stripe_session_id: string | null
+          stripe_subscription_id: string | null
+          updated_at: string
+          user_email: string
+        }
+        Insert: {
+          amount_cents: number
+          created_at?: string
+          id?: string
+          plan_name: string
+          status?: string
+          stripe_customer_id?: string | null
+          stripe_session_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string
+          user_email: string
+        }
+        Update: {
+          amount_cents?: number
+          created_at?: string
+          id?: string
+          plan_name?: string
+          status?: string
+          stripe_customer_id?: string | null
+          stripe_session_id?: string | null
+          stripe_subscription_id?: string | null
+          updated_at?: string
+          user_email?: string
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string

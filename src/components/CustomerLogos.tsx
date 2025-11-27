@@ -1,8 +1,7 @@
-
-import React from 'react';
+import React, { useEffect, useCallback } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const CustomerLogos = () => {
-  // Real company logos using SVG paths for professional appearance
   const customers = [
     { 
       name: "Spotify", 
@@ -70,12 +69,29 @@ const CustomerLogos = () => {
     }
   ];
 
-  // Production-ready stats
   const stats = [
-    { label: "Protected AI Assets", value: "2,500+", color: "bg-emerald-500" },
-    { label: "Enterprise Clients", value: "150+", color: "bg-indigo-500" },
-    { label: "Uptime Guarantee", value: "99.9%", color: "bg-purple-500" }
+    { label: "Protected AI Assets", value: "2,500+" },
+    { label: "Enterprise Clients", value: "150+" },
+    { label: "Uptime Guarantee", value: "99.9%" }
   ];
+
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+    slidesToScroll: 1,
+    dragFree: true,
+  });
+
+  const autoplay = useCallback(() => {
+    if (!emblaApi) return;
+    emblaApi.scrollNext();
+  }, [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const interval = setInterval(autoplay, 2500);
+    return () => clearInterval(interval);
+  }, [emblaApi, autoplay]);
 
   return (
     <section className="py-12 px-6 md:px-8">
@@ -89,29 +105,30 @@ const CustomerLogos = () => {
           </p>
         </div>
         
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-8 items-center mb-12">
-          {customers.map((customer, index) => (
-            <div 
-              key={index}
-              className="flex flex-col items-center group cursor-pointer"
-            >
-              <div className="text-muted-foreground/60 group-hover:text-foreground transition-all duration-300 group-hover:scale-110">
-                {customer.logo}
+        <div className="overflow-hidden" ref={emblaRef}>
+          <div className="flex gap-12">
+            {[...customers, ...customers].map((customer, index) => (
+              <div 
+                key={`${customer.name}-${index}`}
+                className="flex-shrink-0 flex flex-col items-center group cursor-pointer min-w-[100px]"
+              >
+                <div className="text-muted-foreground/60 group-hover:text-foreground transition-all duration-300 group-hover:scale-110">
+                  {customer.logo}
+                </div>
+                <span className="text-xs text-muted-foreground mt-2 text-center group-hover:text-foreground transition-colors">
+                  {customer.name}
+                </span>
               </div>
-              <span className="text-xs text-muted-foreground mt-2 text-center group-hover:text-foreground transition-colors">
-                {customer.name}
-              </span>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
-        <div className="border-t border-border pt-8">
+        <div className="border-t border-border pt-8 mt-8">
           <div className="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12 text-center">
             {stats.map((stat, index) => (
               <div key={index} className="flex items-center">
-                <div className={`w-2 h-2 ${stat.color} rounded-full mr-3`}></div>
                 <div>
-                  <div className="text-2xl font-bold">{stat.value}</div>
+                  <div className="text-2xl font-bold text-primary">{stat.value}</div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
                 </div>
               </div>
