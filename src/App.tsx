@@ -22,6 +22,7 @@ const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const SignIn = lazy(() => import("./pages/SignIn"));
+const Auth = lazy(() => import("./pages/Auth"));
 const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
 const GetStarted = lazy(() => import("./pages/GetStarted"));
 const CaseStudies = lazy(() => import("./pages/CaseStudies"));
@@ -94,6 +95,7 @@ const App = () => {
                   <Route path="/blog/:slug" element={<LazyRoute><BlogArticle /></LazyRoute>} />
                   <Route path="/contact" element={<LazyRoute><Contact /></LazyRoute>} />
                   <Route path="/sign-in" element={<LazyRoute><SignIn /></LazyRoute>} />
+                  <Route path="/auth" element={<LazyRoute><Auth /></LazyRoute>} />
                   <Route path="/forgot-password" element={<LazyRoute><ForgotPassword /></LazyRoute>} />
                   <Route path="/get-started" element={<LazyRoute><GetStarted /></LazyRoute>} />
                   <Route path="/case-studies" element={<LazyRoute><CaseStudies /></LazyRoute>} />

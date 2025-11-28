@@ -152,9 +152,6 @@ const Navbar = () => {
                     <Link to="/careers" className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
                       Careers
                     </Link>
-                    <Link to="/contact" className="block px-4 py-2 text-sm hover:bg-secondary transition-colors">
-                      Contact
-                    </Link>
                   </div>
                 </div>
               )}
@@ -171,7 +168,7 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Link to="/sign-in" className="text-sm font-medium hover:text-primary transition-colors">
+            <Link to="/auth" className="text-sm font-medium hover:text-primary transition-colors">
               Sign in
             </Link>
             <Link to="/get-started">
@@ -267,9 +264,6 @@ const Navbar = () => {
                 <Link to="/careers" className="block px-3 py-2 rounded-md text-base font-medium">
                   Careers
                 </Link>
-                <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium">
-                  Contact
-                </Link>
               </div>
             )}
           </div>
@@ -283,7 +277,7 @@ const Navbar = () => {
           
           <div className="pt-4 border-t border-border">
             <Link
-              to="/sign-in"
+              to="/auth"
               className="block px-3 py-2 rounded-md text-base font-medium"
             >
               Sign in
