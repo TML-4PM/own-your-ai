@@ -11,6 +11,8 @@ interface CheckoutRequest {
   planName: string;
   amount: number;
   email: string;
+  successUrl?: string;
+  cancelUrl?: string;
 }
 
 const handler = async (req: Request): Promise<Response> => {
@@ -29,7 +31,7 @@ const handler = async (req: Request): Promise<Response> => {
       apiVersion: "2023-10-16",
     });
 
-    const { planName, amount, email }: CheckoutRequest = await req.json();
+    const { planName, amount, email, successUrl, cancelUrl }: CheckoutRequest = await req.json();
     
     console.log("Creating checkout session for:", { planName, amount, email });
 
@@ -37,6 +39,8 @@ const handler = async (req: Request): Promise<Response> => {
       throw new Error("Missing required fields: planName, amount, or email");
     }
 
+    const origin = req.headers.get("origin") || "https://ghvwogfpfzpwfzoxbeix.lovableproject.com";
+    
     // Create Stripe checkout session
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
@@ -58,8 +62,8 @@ const handler = async (req: Request): Promise<Response> => {
           quantity: 1,
         },
       ],
-      success_url: `${req.headers.get("origin")}/pricing?success=true&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${req.headers.get("origin")}/pricing?canceled=true`,
+      success_url: successUrl || `${origin}/get-started?success=true&session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: cancelUrl || `${origin}/get-started?canceled=true`,
     });
 
     console.log("Checkout session created:", session.id);
