@@ -1,6 +1,6 @@
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { supabase } from '@/integrations/supabase/client';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import AnimatedButton from '@/components/ui/AnimatedButton';
@@ -11,22 +11,41 @@ const ForgotPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulate password reset process
-    setTimeout(() => {
-      console.log('Password reset requested for:', email);
-      
+    try {
+      const { error } = await supabase.auth.resetPasswordForEmail(email, {
+        redirectTo: `${window.location.origin}/auth?reset=true`,
+      });
+
+      if (error) {
+        toast({
+          title: "Error",
+          description: error.message,
+          variant: "destructive",
+        });
+        setIsLoading(false);
+        return;
+      }
+
       toast({
         title: "Reset Link Sent",
         description: "Check your email for instructions to reset your password.",
       });
       
-      setIsLoading(false);
       setIsSubmitted(true);
-    }, 1500);
+    } catch (error) {
+      console.error('Password reset error:', error);
+      toast({
+        title: "Error",
+        description: "An unexpected error occurred. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -67,7 +86,7 @@ const ForgotPassword = () => {
                 </div>
                 
                 <div className="text-center pt-4">
-                  <Link to="/sign-in" className="text-primary hover:underline text-sm">
+                  <Link to="/auth" className="text-primary hover:underline text-sm">
                     Return to sign in
                   </Link>
                 </div>
@@ -81,7 +100,7 @@ const ForgotPassword = () => {
                 <p className="mb-6">
                   If you don't see the email in your inbox, please check your spam folder.
                 </p>
-                <Link to="/sign-in">
+                <Link to="/auth">
                   <AnimatedButton>
                     Return to Sign In
                   </AnimatedButton>
