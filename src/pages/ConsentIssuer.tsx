@@ -1,1 +1,298 @@
-aW1wb3J0IHsgdXNlU3RhdGUsIHVzZUVmZmVjdCB9IGZyb20gInJlYWN0IjsKaW1wb3J0IHsgQnV0dG9uIH0gZnJvbSAiQC9jb21wb25lbnRzL3VpL2J1dHRvbiI7CmltcG9ydCB7IENhcmQsIENhcmRDb250ZW50LCBDYXJkRGVzY3JpcHRpb24sIENhcmRIZWFkZXIsIENhcmRUaXRsZSB9IGZyb20gIkAvY29tcG9uZW50cy91aS9jYXJkIjsKaW1wb3J0IHsgSW5wdXQgfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvaW5wdXQiOwppbXBvcnQgeyBMYWJlbCB9IGZyb20gIkAvY29tcG9uZW50cy91aS9sYWJlbCI7CmltcG9ydCB7IFNlbGVjdCwgU2VsZWN0Q29udGVudCwgU2VsZWN0SXRlbSwgU2VsZWN0VHJpZ2dlciwgU2VsZWN0VmFsdWUgfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvc2VsZWN0IjsKaW1wb3J0IHsgQmFkZ2UgfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvYmFkZ2UiOwppbXBvcnQgeyB1c2VUb2FzdCB9IGZyb20gIkAvaG9va3MvdXNlLXRvYXN0IjsKaW1wb3J0IHsgU2hpZWxkLCBDbG9jaywgTG9jaywgQWxlcnRUcmlhbmdsZSwgUmVmcmVzaEN3IH0gZnJvbSAibHVjaWRlLXJlYWN0IjsKaW1wb3J0IEhlYWRlciBmcm9tICJAL2NvbXBvbmVudHMvSGVhZGVyIjsKaW1wb3J0IEZvb3RlciBmcm9tICJAL2NvbXBvbmVudHMvRm9vdGVyIjsKCmNvbnN0IEJSSURHRV9VUkwgPSAiaHR0cHM6Ly9tNW9xajIxY2hkLmV4ZWN1dGUtYXBpLmFwLXNvdXRoZWFzdC0yLmFtYXpvbmF3cy5jb20iOwoKaW50ZXJmYWNlIENvbnNlbnRHcmFudCB7CiAgaWQ6IHN0cmluZzsKICBjb25zZW50X3R5cGU6IHN0cmluZzsKICBncmFudGVlX2lkOiBzdHJpbmc7CiAgZXhwaXJlc19hdDogc3RyaW5nOwp9CgppbnRlcmZhY2UgSW50ZWdyaXR5U3RhdHVzIHsKICBjb25zZW50X2FjdGl2ZTogbnVtYmVyOwogIHRocmVhdHM6IG51bWJlcjsKICBzaWduYWxfcXVldWU6IG51bWJlcjsKICBkaXNwdXRlczogbnVtYmVyOwogIGZpZ2h0ZXJfbW9kZTogc3RyaW5nOwp9Cgpjb25zdCBDb25zZW50SXNzdWVyID0gKCkgPT4gewogIGNvbnN0IHsgdG9hc3QgfSA9IHVzZVRvYXN0KCk7CiAgY29uc3QgW2dyYW50ZWUsIHNldEdyYW50ZWVdID0gdXNlU3RhdGUoIiIpOwogIGNvbnN0IFtjb25zZW50VHlwZSwgc2V0Q29uc2VudFR5cGVdID0gdXNlU3RhdGUoImRhdGFfYWNjZXNzIik7CiAgY29uc3QgW2V4cGlyeSwgc2V0RXhwaXJ5XSA9IHVzZVN0YXRlKCI2NjAiKTsKICBjb25zdCBbaXNMb2FkaW5nLCBzZXRJc0xvYWRpbmddID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtncmFudHMsIHNldEdyYW50c10gPSB1c2VTdGF0ZTxDb25zZW50R3JhbnRbXT4oW10pOwogIGNvbnN0IFtpbnRlZ3JpdHksIHNldEludGVncml0eV0gPSB1c2VTdGF0ZTxJbnRlZ3JpdHlTdGF0dXMgfCBudWxsPihudWxsKTsKCiAgY29uc3Qgc3FsID0gYXN5bmMgKHF1ZXJ5OiBzdHJpbmcpID0+IHsKICAgIGNvbnN0IHJlcyA9IGF3YWl0IGZldGNoKGAke0JSSURHRV9VUkx9L2xhbWJkYS9pbnZva2VgLCB7CiAgICAgIG1ldGhvZDogIlBPU1QiLAogICAgICBoZWFkZXJzOiB7ICJDb250ZW50LVR5cGUiOiAiYXBwbGljYXRpb24vanNvbiIgfSwKICAgICAgYm9keTogSlNPTi5zdHJpbmdpZnkoewogICAgICAgIGZ1bmN0aW9uTmFtZTogInRyb3ktc3FsLWV4ZWN1dG9yIiwKICAgICAgICBwYXlsb2FkOiB7IHNxbDogcXVlcnkgfSwKICAgICAgfSksCiAgICB9KTsKICAgIGNvbnN0IGRhdGEgPSBhd2FpdCByZXMuanNvbigpOwogICAgcmV0dXJuIEpTT04ucGFyc2UoZGF0YS5yZXN1bHQuYm9keSk7CiAgfTsKCiAgY29uc3QgbG9hZEludGVncml0eSA9IGFzeW5jICgpID0+IHsKICAgIHRyeSB7CiAgICAgIGNvbnN0IHJlc3VsdCA9IGF3YWl0IHNxbCgKICAgICAgICAiU0VMRUNUIGNvbnRlbnQgRlJPTSBkYXNoYm9hcmRfZmVlZHMgV0hFUkUgZmVlZF9pZD0nbmV1cmFsLWludGVncml0eS1zdGFjayciCiAgICAgICk7CiAgICAgIGlmIChyZXN1bHQucmVzdWx0cz8uWzBdPy5jb250ZW50KSB7CiAgICAgICAgc2V0SW50ZWdyaXR5KHJlc3VsdC5yZXN1bHRzWzBdLmNvbnRlbnQpOwogICAgICB9CiAgICB9IGNhdGNoIChlKSB7CiAgICAgIGNvbnNvbGUuZXJyb3IoIkZhaWxlZCB0byBsb2FkIGludGVncml0eSBzdGF0dXMiLCBlKTsKICAgIH0KICB9OwoKICBjb25zdCBsb2FkR3JhbnRzID0gYXN5bmMgKCkgPT4gewogICAgdHJ5IHsKICAgICAgY29uc3QgcmVzdWx0ID0gYXdhaXQgc3FsKAogICAgICAgICJTRUxFQ1QgaWQsIGNvbnNlbnRfdHlwZSwgZ3JhbnRlZV9pZCwgZXhwaXJlc19hdCBGUk9NIGNvbnNlbnRfZ3JhbnRzIFdIRVJFIHN0YXR1cz0nYWN0aXZlJyBBTkQgZXhwaXJlc19hdCA+IE5PVygpIE9SREVSIEJZIGV4cGlyZXNfYXQgQVNDIExJTUlUIDIwIgogICAgICApOwogICAgICBzZXRHcmFudHMocmVzdWx0LnJlc3VsdHMgfHwgW10pOwogICAgfSBjYXRjaCAoZSkgewogICAgICBjb25zb2xlLmVycm9yKCJGYWlsZWQgdG8gbG9hZCBncmFudHMiLCBlKTsKICAgIH0KICB9OwoKICBjb25zdCBpc3N1ZUNvbnNlbnQgPSBhc3luYyAoKSA9PiB7CiAgICBpZiAoIWdyYW50ZWUudHJpbSgpKSB7CiAgICAgIHRvYXN0KHsKICAgICAgICB0aXRsZTogIkVycm9yIiwKICAgICAgICBkZXNjcmlwdGlvbjogIkdyYW50ZWUgSUQgaXMgcmVxdWlyZWQiLAogICAgICAgIHZhcmlhbnQ6ICJkZXN0cnVjdGl2ZSIsCiAgICAgIH0pOwogICAgICByZXR1cm47CiAgICB9CgogICAgc2V0SXNMb2FkaW5nKHRydWUpOwogICAgdHJ5IHsKICAgICAgY29uc3QgZXhwaXJlc0F0ID0gbmV3IERhdGUoRGF0ZS5ub3coKSArIHBhcnNlSW50KGV4cGlyeSkgKiAxMDAwKS50b0lTT1N0cmluZygpOwogICAgICBhd2FpdCBzcWwoCiAgICAgICAgYElOU0VSVCBJTlRPIGNvbnNlbnRfZ3JhbnRzIChncmFudG9yX2lkLCBncmFudGVlX2lkLCBjb25zZW50X3R5cGUsIHNjb3BlLCBleHBpcmVzX2F0LCBzdGF0dXMpIFZBTFVFUyAoJ3NvdmVyZWlnbicsICcke2dyYW50ZWV9JywgJyR7Y29uc2VudFR5cGV9JywgJ3sibGV2ZWwiOiJzdGFuZGFyZCJ9JywgJyR7ZXhwaXJlc0F0fScsICdhY3RpdmUnKWAKICAgICAgKTsKICAgICAgCiAgICAgIHRvYXN0KHsKICAgICAgICB0aXRsZTogIkNvbnNlbnQgR3JhbnRlZCIsCiAgICAgICAgZGVzY3JpcHRpb246IGAke2NvbnNlbnRUeXBlfSBjb25zZW50IGlzc3VlZCB0byAke2dyYW50ZWV9IGZvciAke2V4cGlyeX1zYCwKICAgICAgfSk7CiAgICAgIAogICAgICBzZXRHcmFudGVlKCIiKTsKICAgICAgbG9hZEdyYW50cygpOwogICAgICBsb2FkSW50ZWdyaXR5KCk7CiAgICB9IGNhdGNoIChlKSB7CiAgICAgIHRvYXN0KHsKICAgICAgICB0aXRsZTogIkVycm9yIiwKICAgICAgICBkZXNjcmlwdGlvbjogIkZhaWxlZCB0byBpc3N1ZSBjb25zZW50IiwKICAgICAgICB2YXJpYW50OiAiZGVzdHJ1Y3RpdmUiLAogICAgICB9KTsKICAgIH0gZmluYWxseSB7CiAgICAgIHNldElzTG9hZGluZyhmYWxzZSk7CiAgICB9CiAgfTsKCiAgY29uc3QgZ2V0Q291bnRkb3duID0gKGV4cGlyZXNBdDogc3RyaW5nKSA9PiB7CiAgICBjb25zdCByZW1haW5pbmcgPSBNYXRoLm1heCgwLCBNYXRoLmZsb29yKChuZXcgRGF0ZShleHBpcmVzQXQpLmdldFRpbWUoKSAtIERhdGUubm93KCkpIC8gMTAwMCkpOwogICAgY29uc3QgbWlucyA9IE1hdGguZmxvb3IocmVtYWluaW5nIC8gNjApOwogICAgY29uc3Qgc2VjcyA9IHJlbWFpbmluZyAlIDYwOwogICAgcmV0dXJuIGAke21pbnN9OiR7c2Vjcy50b1N0cmluZygpLnBhZFN0YXJ0KDIsICIwIil9YDsKICB9OwoKICB1c2VFZmZlY3QoKCkgPT4gewogICAgbG9hZEludGVncml0eSgpOwogICAgbG9hZEdyYW50cygpOwogICAgY29uc3QgaW50ZXJ2YWwgPSBzZXRJbnRlcnZhbCgoKSA9PiB7CiAgICAgIGxvYWRHcmFudHMoKTsKICAgICAgbG9hZEludGVncml0eSgpOwogICAgfSwgMzAwMDApOwogICAgcmV0dXJuICgpID0+IGNsZWFySW50ZXJ2YWwoaW50ZXJ2YWwpOwogIH0sIFtdKTsKCiAgcmV0dXJuICgKICAgIDxkaXYgY2xhc3NOYW1lPSJtaW4taC1zY3JlZW4gYmctYmFja2dyb3VuZCI+CiAgICAgIDxIZWFkZXIgLz4KICAgICAgCiAgICAgIDxtYWluIGNsYXNzTmFtZT0iY29udGFpbmVyIG14LWF1dG8gcHgtNCBweS0xMiI+CiAgICAgICAgPGRpdiBjbGFzc05hbWU9Im1heC13LTR4bCBteC1hdXRvIj4KICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciBtYi0xMiI+CiAgICAgICAgICAgIDxoMSBjbGFzc05hbWU9InRleHQtNHhsIGZvbnQtYm9sZCBtYi00IGJnLWdyYWRpZW50LXRvLXIgZnJvbS1pbmRpZ28tNjAwIHRvLXB1cnBsZS02MDAgYmctY2xpcC10ZXh0IHRleHQtdHJhbnNwYXJlbnQiPgogICAgICAgICAgICAgIE5ldXJhbCBDb25zZW50IFN5c3RlbQogICAgICAgICAgICA8L2gxPgogICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtbXV0ZWQtZm9yZWdyb3VuZCB0ZXh0LWxnIj4KICAgICAgICAgICAgICBJc3N1ZSB0aW1lLWxpbWl0ZWQgY29uc2VudCBncmFudHMgd2l0aCA2NjBzcyBzdGFuZGFyZCBleHBpcnkKICAgICAgICAgICAgPC9wPgogICAgICAgICAgPC9kaXY+CgogICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImdyaWQgbWQ6Z3JpZC1jb2xzLTIgZ2FwLTYiPgogICAgICAgICAgICB7LyogSW50ZWdyaXR5IFN0YXR1cyAqL30KICAgICAgICAgICAgPENhcmQgY2xhc3NOYW1lPXtpbnRlZ3JpdHk/LnRocmVhdHMgPyAiYm9yZGVyLXJlZC01MDAiIDogIiJ9PgogICAgICAgICAgICAgIDxDYXJkSGVhZGVyPgogICAgICAgICAgICAgICAgPENhcmRUaXRsZSBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGdhcC0yIj4KICAgICAgICAgICAgICAgICAgPFNoaWVsZCBjbGFzc05hbWU9ImgtNSB3LTUiIC8+CiAgICAgICAgICAgICAgICAgIFN5c3RlbSBJbnRlZ3JpdHkKICAgICAgICAgICAgICAgIDwvQ2FyZFRpdGxlPgogICAgICAgICAgICAgICAgPENhcmREZXNjcmlwdGlvbj5SZWFsLXRpbWUgbmV1cmFsIHN0YWNrIGhlYWx0aDwvQ2FyZERlc2NyaXB0aW9uPgogICAgICAgICAgICAgIDwvQ2FyZEhlYWRlcj4KICAgICAgICAgICAgICA8Q2FyZENvbnRlbnQ+CiAgICAgICAgICAgICAgICB7aW50ZWdyaXR5ID8gKAogICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZ3JpZCBncmlkLWNvbHMtMiBnYXAtNCI+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtY2VudGVyIHAtMyBiZy1tdXRlZC81MCByb3VuZGVkLWxnIj4KICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LTJ4bCBmb250LWJvbGQiPntpbnRlZ3JpdHkuY29uc2VudF9hY3RpdmV9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC14cyB0ZXh0LW11dGVkLWZvcmVncm91bmQiPkFjdGl2ZSBDb25zZW50czwvZGl2PgogICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciBwLTMgYmctbXV0ZWQvNTAgcm91bmRlZC1sZyI+CiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT17YHRleHQtMnhsIGZvbnQtYm9sZCAke2ludGVncml0eS50aHJlYXRzID4gMCA/ICJ0ZXh0LXJlZC01MDAiIDogIiJ9YH0+CiAgICAgICAgICAgICAgICAgICAgICAgIHtpbnRlZ3JpdHkudGhyZWF0c30KICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQteHMgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIj5UaHJlYXRzPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtY2VudGVyIHAtMyBiZy1tdXRlZC81MCByb3VuZGVkLWxnIj4KICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LTJ4bCBmb250LWJvbGQiPntpbnRlZ3JpdHkuc2lnbmFsX3F1ZXVlfTwvZGl2PgogICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQteHMgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIj5TaWduYWwgUXVldWU8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0idGV4dC1jZW50ZXIgcC0zIGJnLW11dGVkLzUwIHJvdW5kZWQtbGciPgogICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtMnhsIGZvbnQtYm9sZCI+e2ludGVncml0eS5kaXNwdXRlc308L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LXhzIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCI+RGlzcHV0ZXM8L2Rpdj4KICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICB7aW50ZWdyaXR5LmZpZ2h0ZXJfbW9kZSAhPT0gIklOQUNUSVZFIiAmJiAoCiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iY29sLXNwYW4tMiI+CiAgICAgICAgICAgICAgICAgICAgICAgIDxCYWRnZSB2YXJpYW50PSJkZXN0cnVjdGl2ZSIgY2xhc3NOYW1lPSJ3LWZ1bGwganVzdGlmeS1jZW50ZXIgcHktMiI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgPEFsZXJ0VHJpYW5nbGUgY2xhc3NOYW1lPSJoLTQgdy00IG1yLTIiIC8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgRmlnaHRlciBNb2RlOiB7aW50ZWdyaXR5LmZpZ2h0ZXJfbW9kZX0KICAgICAgICAgICAgICAgICAgICAgICAgPC9CYWRnZT4KICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgKSA6ICgKICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtY2VudGVyIHRleHQtbXV0ZWQtZm9yZWdyb3VuZCBweS04Ij5Mb2FkaW5nLi4uPC9kaXY+CiAgICAgICAgICAgICAgICApfQogICAgICAgICAgICAgIDwvQ2FyZENvbnRlbnQ+CiAgICAgICAgICAgIDwvQ2FyZD4KCiAgICAgICAgICAgIHsvKiBJc3N1ZSBDb25zZW50ICovfQogICAgICAgICAgICA8Q2FyZD4KICAgICAgICAgICAgICA8Q2FyZEhlYWRlcj4KICAgICAgICAgICAgICAgIDxDYXJkVGl0bGUgY2xhc3NOYW1lPSJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMiI+CiAgICAgICAgICAgICAgICAgIDxMb2NrIGNsYXNzTmFtZT0iaC01IHctNSIgLz4KICAgICAgICAgICAgICAgICAgSXNzdWUgQ29uc2VudAogICAgICAgICAgICAgICAgPC9DYXJkVGl0bGU+CiAgICAgICAgICAgICAgICA8Q2FyZERlc2NyaXB0aW9uPkdyYW50IHRpbWUtbGltaXRlZCBhY2Nlc3M8L0NhcmREZXNjcmlwdGlvbj4KICAgICAgICAgICAgICA8L0NhcmRIZWFkZXI+CiAgICAgICAgICAgICAgPENhcmRDb250ZW50IGNsYXNzTmFtZT0ic3BhY2UteS00Ij4KICAgICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICAgIDxMYWJlbCBodG1sRm9yPSJncmFudGVlIj5HcmFudGVlIElEPC9MYWJlbD4KICAgICAgICAgICAgICAgICAgPElucHV0CiAgICAgICAgICAgICAgICAgICAgaWQ9ImdyYW50ZWUiCiAgICAgICAgICAgICAgICAgICAgcGxhY2Vob2xkZXI9ImFnZW50X2lkIG9yIHVzZXJfaWQiCiAgICAgICAgICAgICAgICAgICAgdmFsdWU9e2dyYW50ZWV9CiAgICAgICAgICAgICAgICAgICAgb25DaGFuZ2U9eyhlKSA9PiBzZXRHcmFudGVlKGUudGFyZ2V0LnZhbHVlKX0KICAgICAgICAgICAgICAgICAgLz4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPGRpdj4KICAgICAgICAgICAgICAgICAgPExhYmVsPkNvbnNlbnQgVHlwZTwvTGFiZWw+CiAgICAgICAgICAgICAgICAgIDxTZWxlY3QgdmFsdWU9e2NvbnNlbnRUeXBlfSBvblZhbHVlQ2hhbmdlPXtzZXRDb25zZW50VHlwZX0+CiAgICAgICAgICAgICAgICAgICAgPFNlbGVjdFRyaWdnZXI+CiAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0VmFsdWUgLz4KICAgICAgICAgICAgICAgICAgICA8L1NlbGVjdFRyaWdnZXI+CiAgICAgICAgICAgICAgICAgICAgPFNlbGVjdENvbnRlbnQ+CiAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0SXRlbSB2YWx1ZT0iZGF0YV9hY2Nlc3MiPkRhdGEgQWNjZXNzPC9TZWxlY3RJdGVtPgogICAgICAgICAgICAgICAgICAgICAgPFNlbGVjdEl0ZW0gdmFsdWU9InNpZ25hbF9zaGFyZSI+U2lnbmFsIFNoYXJpbmc8L1NlbGVjdEl0ZW0+CiAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0SXRlbSB2YWx1ZT0iYmlvbWV0cmljIj5CaW9tZXRyaWMgQXV0aDwvU2VsZWN0SXRlbT4KICAgICAgICAgICAgICAgICAgICAgIDxTZWxlY3RJdGVtIHZhbHVlPSJkZWxlZ2F0ZSI+RGVsZWdhdGlvbjwvU2VsZWN0SXRlbT4KICAgICAgICAgICAgICAgICAgICAgIDxTZWxlY3RJdGVtIHZhbHVlPSJlbWVyZ2VuY3kiPkVtZXJnZW5jeSBPdmVycmlkZTwvU2VsZWN0SXRlbT4KICAgICAgICAgICAgICAgICAgICA8L1NlbGVjdENvbnRlbnQ+CiAgICAgICAgICAgICAgICAgIDwvU2VsZWN0PgogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgICAgICA8TGFiZWw+RXhwaXJ5IER1cmF0aW9uPC9MYWJlbD4KICAgICAgICAgICAgICAgICAgPFNlbGVjdCB2YWx1ZT17ZXhwaXJ5fSBvblZhbHVlQ2hhbmdlPXtzZXRFeHBpcnl9PgogICAgICAgICAgICAgICAgICAgIDxTZWxlY3RUcmlnZ2VyPgogICAgICAgICAgICAgICAgICAgICAgPFNlbGVjdFZhbHVlIC8+CiAgICAgICAgICAgICAgICAgICAgPC9TZWxlY3RUcmlnZ2VyPgogICAgICAgICAgICAgICAgICAgIDxTZWxlY3RDb250ZW50PgogICAgICAgICAgICAgICAgICAgICAgPFNlbGVjdEl0ZW0gdmFsdWU9IjY2MCI+MTEgbWluIChzdGFuZGFyZCA2NjBzcyk8L1NlbGVjdEl0ZW0+CiAgICAgICAgICAgICAgICAgICAgICA8U2VsZWN0SXRlbSB2YWx1ZT0iMzAwIj41IG1pbiAocXVpY2spPC9TZWxlY3RJdGVtPgogICAgICAgICAgICAgICAgICAgICAgPFNlbGVjdEl0ZW0gdmFsdWU9IjM2MDAiPjEgaG91ciAoZXh0ZW5kZWQpPC9TZWxlY3RJdGVtPgogICAgICAgICAgICAgICAgICAgIDwvU2VsZWN0Q29udGVudD4KICAgICAgICAgICAgICAgICAgPC9TZWxlY3Q+CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgIDxCdXR0b24gCiAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e2lzc3VlQ29uc2VudH0gCiAgICAgICAgICAgICAgICAgIGRpc2FibGVkPXtpc0xvYWRpbmd9CiAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0idy1mdWxsIGJnLWdyYWRpZW50LXRvLXIgZnJvbS1pbmRpZ28tNjAwIHRvLXB1cnBsZS02MDAiCiAgICAgICAgICAgICAgICA+CiAgICAgICAgICAgICAgICAgIHtpc0xvYWRpbmcgPyAiSXNzdWluZy4uLiIgOiAi8J+agCBJc3N1ZSBDb25zZW50IEdyYW50In0KICAgICAgICAgICAgICAgIDwvQnV0dG9uPgogICAgICAgICAgICAgIDwvQ2FyZENvbnRlbnQ+CiAgICAgICAgICAgIDwvQ2FyZD4KICAgICAgICAgIDwvZGl2PgoKICAgICAgICAgIHsvKiBBY3RpdmUgR3JhbnRzICovfQogICAgICAgICAgPENhcmQgY2xhc3NOYW1lPSJtdC02Ij4KICAgICAgICAgICAgPENhcmRIZWFkZXI+CiAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktYmV0d2VlbiI+CiAgICAgICAgICAgICAgICA8ZGl2PgogICAgICAgICAgICAgICAgICA8Q2FyZFRpdGxlIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIiPgogICAgICAgICAgICAgICAgICAgIDxDbG9jayBjbGFzc05hbWU9ImgtNSB3LTUiIC8+CiAgICAgICAgICAgICAgICAgICAgQWN0aXZlIEdyYW50cwogICAgICAgICAgICAgICAgICA8L0NhcmRUaXRsZT4KICAgICAgICAgICAgICAgICAgPENhcmREZXNjcmlwdGlvbj5BdXRvLWV4cGlyZXMgYXQgNjYwc3M8L0NhcmREZXNjcmlwdGlvbj4KICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgPEJ1dHRvbiB2YXJpYW50PSJvdXRsaW5lIiBzaXplPSJzbSIgb25DbGljaz17bG9hZEdyYW50c30+CiAgICAgICAgICAgICAgICAgIDxSZWZyZXNoQ3cgY2xhc3NOYW1lPSJoLTQgdy00IG1yLTIiIC8+CiAgICAgICAgICAgICAgICAgIFJlZnJlc2gKICAgICAgICAgICAgICAgIDwvQnV0dG9uPgogICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICA8L0NhcmRIZWFkZXI+CiAgICAgICAgICAgIDxDYXJkQ29udGVudD4KICAgICAgICAgICAgICB7Z3JhbnRzLmxlbmd0aCA+IDAgPyAoCiAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0ic3BhY2UteS0zIj4KICAgICAgICAgICAgICAgICAge2dyYW50cy5tYXAoKGdyYW50KSA9PiAoCiAgICAgICAgICAgICAgICAgICAgPGRpdgogICAgICAgICAgICAgICAgICAgICAga2V5PXtncmFudC5pZH0KICAgICAgICAgICAgICAgICAgICAgIGNsYXNzTmFtZT0iZmxleCBpdGVtcy1jZW50ZXIganVzdGlmeS1iZXR3ZWVuIHAtMyBiZy1tdXRlZC81MCByb3VuZGVkLWxnIgogICAgICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgICAgIDxkaXY+CiAgICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJmb250LW1lZGl1bSI+e2dyYW50LmNvbnNlbnRfdHlwZX08L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9InRleHQtc20gdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIj7ihpIge2dyYW50LmdyYW50ZWVfaWR9PC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgIDxCYWRnZSB2YXJpYW50PSJzZWNvbmRhcnkiIGNsYXNzTmFtZT0iZm9udC1tb25vIj4KICAgICAgICAgICAgICAgICAgICAgICAge2dldENvdW50ZG93bihncmFudC5leHBpcmVzX2F0KX0KICAgICAgICAgICAgICAgICAgICAgIDwvQmFkZ2U+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICkpfQogICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgKSA6ICgKICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJ0ZXh0LWNlbnRlciB0ZXh0LW11dGVkLWZvcmVncm91bmQgcHktOCI+CiAgICAgICAgICAgICAgICAgIE5vIGFjdGl2ZSBncmFudHMKICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICl9CiAgICAgICAgICAgIDwvQ2FyZENvbnRlbnQ+CiAgICAgICAgICA8L0NhcmQ+CiAgICAgICAgPC9kaXY+CiAgICAgIDwvbWFpbj4KCiAgICAgIDxGb290ZXIgLz4KICAgIDwvZGl2PgogICk7Cn07CgpleHBvcnQgZGVmYXVsdCBDb25zZW50SXNzdWVyOwo=
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Badge } from "@/components/ui/badge";
+import { useToast } from "@/hooks/use-toast";
+import { Shield, Clock, Lock, AlertTriangle, RefreshCw } from "lucide-react";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+
+const BRIDGE_URL = "https://m5oqj21chd.execute-api.ap-southeast-2.amazonaws.com";
+
+interface ConsentGrant {
+  id: string;
+  consent_type: string;
+  grantee_id: string;
+  expires_at: string;
+}
+
+interface IntegrityStatus {
+  consent_active: number;
+  threats: number;
+  signal_queue: number;
+  disputes: number;
+  fighter_mode: string;
+}
+
+const ConsentIssuer = () => {
+  const { toast } = useToast();
+  const [grantee, setGrantee] = useState("");
+  const [consentType, setConsentType] = useState("data_access");
+  const [expiry, setExpiry] = useState("660");
+  const [isLoading, setIsLoading] = useState(false);
+  const [grants, setGrants] = useState<ConsentGrant[]>([]);
+  const [integrity, setIntegrity] = useState<IntegrityStatus | null>(null);
+
+  const sql = async (query: string) => {
+    const res = await fetch(`${BRIDGE_URL}/lambda/invoke`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        functionName: "troy-sql-executor",
+        payload: { sql: query },
+      }),
+    });
+    const data = await res.json();
+    return JSON.parse(data.result.body);
+  };
+
+  const loadIntegrity = async () => {
+    try {
+      const result = await sql(
+        "SELECT content FROM dashboard_feeds WHERE feed_id='neural-integrity-stack'"
+      );
+      if (result.results?.[0]?.content) {
+        setIntegrity(result.results[0].content);
+      }
+    } catch (e) {
+      console.error("Failed to load integrity status", e);
+    }
+  };
+
+  const loadGrants = async () => {
+    try {
+      const result = await sql(
+        "SELECT id, consent_type, grantee_id, expires_at FROM consent_grants WHERE status='active' AND expires_at > NOW() ORDER BY expires_at ASC LIMIT 20"
+      );
+      setGrants(result.results || []);
+    } catch (e) {
+      console.error("Failed to load grants", e);
+    }
+  };
+
+  const issueConsent = async () => {
+    if (!grantee.trim()) {
+      toast({
+        title: "Error",
+        description: "Grantee ID is required",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    setIsLoading(true);
+    try {
+      const expiresAt = new Date(Date.now() + parseInt(expiry) * 1000).toISOString();
+      await sql(
+        `INSERT INTO consent_grants (grantor_id, grantee_id, consent_type, scope, expires_at, status) VALUES ('sovereign', '${grantee}', '${consentType}', '{"level":"standard"}', '${expiresAt}', 'active')`
+      );
+      
+      toast({
+        title: "Consent Granted",
+        description: `${consentType} consent issued to ${grantee} for ${expiry}s`,
+      });
+      
+      setGrantee("");
+      loadGrants();
+      loadIntegrity();
+    } catch (e) {
+      toast({
+        title: "Error",
+        description: "Failed to issue consent",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const getCountdown = (expiresAt: string) => {
+    const remaining = Math.max(0, Math.floor((new Date(expiresAt).getTime() - Date.now()) / 1000));
+    const mins = Math.floor(remaining / 60);
+    const secs = remaining % 60;
+    return `${mins}:${secs.toString().padStart(2, "0")}`;
+  };
+
+  useEffect(() => {
+    loadIntegrity();
+    loadGrants();
+    const interval = setInterval(() => {
+      loadGrants();
+      loadIntegrity();
+    }, 30000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h1 className="text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              Neural Consent System
+            </h1>
+            <p className="text-muted-foreground text-lg">
+              Issue time-limited consent grants with 660ss standard expiry
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Integrity Status */}
+            <Card className={integrity?.threats ? "border-red-500" : ""}>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Shield className="h-5 w-5" />
+                  System Integrity
+                </CardTitle>
+                <CardDescription>Real-time neural stack health</CardDescription>
+              </CardHeader>
+              <CardContent>
+                {integrity ? (
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="text-center p-3 bg-muted/50 rounded-lg">
+                      <div className="text-2xl font-bold">{integrity.consent_active}</div>
+                      <div className="text-xs text-muted-foreground">Active Consents</div>
+                    </div>
+                    <div className="text-center p-3 bg-muted/50 rounded-lg">
+                      <div className={`text-2xl font-bold ${integrity.threats > 0 ? "text-red-500" : ""}`}>
+                        {integrity.threats}
+                      </div>
+                      <div className="text-xs text-muted-foreground">Threats</div>
+                    </div>
+                    <div className="text-center p-3 bg-muted/50 rounded-lg">
+                      <div className="text-2xl font-bold">{integrity.signal_queue}</div>
+                      <div className="text-xs text-muted-foreground">Signal Queue</div>
+                    </div>
+                    <div className="text-center p-3 bg-muted/50 rounded-lg">
+                      <div className="text-2xl font-bold">{integrity.disputes}</div>
+                      <div className="text-xs text-muted-foreground">Disputes</div>
+                    </div>
+                    {integrity.fighter_mode !== "INACTIVE" && (
+                      <div className="col-span-2">
+                        <Badge variant="destructive" className="w-full justify-center py-2">
+                          <AlertTriangle className="h-4 w-4 mr-2" />
+                          Fighter Mode: {integrity.fighter_mode}
+                        </Badge>
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <div className="text-center text-muted-foreground py-8">Loading...</div>
+                )}
+              </CardContent>
+            </Card>
+
+            {/* Issue Consent */}
+            <Card>
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Lock className="h-5 w-5" />
+                  Issue Consent
+                </CardTitle>
+                <CardDescription>Grant time-limited access</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div>
+                  <Label htmlFor="grantee">Grantee ID</Label>
+                  <Input
+                    id="grantee"
+                    placeholder="agent_id or user_id"
+                    value={grantee}
+                    onChange={(e) => setGrantee(e.target.value)}
+                  />
+                </div>
+                <div>
+                  <Label>Consent Type</Label>
+                  <Select value={consentType} onValueChange={setConsentType}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="data_access">Data Access</SelectItem>
+                      <SelectItem value="signal_share">Signal Sharing</SelectItem>
+                      <SelectItem value="biometric">Biometric Auth</SelectItem>
+                      <SelectItem value="delegate">Delegation</SelectItem>
+                      <SelectItem value="emergency">Emergency Override</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <div>
+                  <Label>Expiry Duration</Label>
+                  <Select value={expiry} onValueChange={setExpiry}>
+                    <SelectTrigger>
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="660">11 min (standard 660ss)</SelectItem>
+                      <SelectItem value="300">5 min (quick)</SelectItem>
+                      <SelectItem value="3600">1 hour (extended)</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                <Button 
+                  onClick={issueConsent} 
+                  disabled={isLoading}
+                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600"
+                >
+                  {isLoading ? "Issuing..." : "🚀 Issue Consent Grant"}
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Active Grants */}
+          <Card className="mt-6">
+            <CardHeader>
+              <div className="flex items-center justify-between">
+                <div>
+                  <CardTitle className="flex items-center gap-2">
+                    <Clock className="h-5 w-5" />
+                    Active Grants
+                  </CardTitle>
+                  <CardDescription>Auto-expires at 660ss</CardDescription>
+                </div>
+                <Button variant="outline" size="sm" onClick={loadGrants}>
+                  <RefreshCw className="h-4 w-4 mr-2" />
+                  Refresh
+                </Button>
+              </div>
+            </CardHeader>
+            <CardContent>
+              {grants.length > 0 ? (
+                <div className="space-y-3">
+                  {grants.map((grant) => (
+                    <div
+                      key={grant.id}
+                      className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
+                    >
+                      <div>
+                        <div className="font-medium">{grant.consent_type}</div>
+                        <div className="text-sm text-muted-foreground">→ {grant.grantee_id}</div>
+                      </div>
+                      <Badge variant="secondary" className="font-mono">
+                        {getCountdown(grant.expires_at)}
+                      </Badge>
+                    </div>
+                  ))}
+                </div>
+              ) : (
+                <div className="text-center text-muted-foreground py-8">
+                  No active grants
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        </div>
+      </main>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default ConsentIssuer;
