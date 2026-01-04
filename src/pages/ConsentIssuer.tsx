@@ -109,13 +109,6 @@ const ConsentIssuer = () => {
     }
   };
 
-  const getCountdown = (expiresAt: string) => {
-    const remaining = Math.max(0, Math.floor((new Date(expiresAt).getTime() - Date.now()) / 1000));
-    const mins = Math.floor(remaining / 60);
-    const secs = remaining % 60;
-    return `${mins}:${secs.toString().padStart(2, "0")}`;
-  };
-
   useEffect(() => {
     loadIntegrity();
     loadGrants();
@@ -129,7 +122,6 @@ const ConsentIssuer = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
       <main className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -140,156 +132,28 @@ const ConsentIssuer = () => {
               Issue time-limited consent grants with 660ss standard expiry
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Integrity Status */}
-            <Card className={integrity?.threats ? "border-red-500" : ""}>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Shield className="h-5 w-5" />
-                  System Integrity
-                </CardTitle>
-                <CardDescription>Real-time neural stack health</CardDescription>
-              </CardHeader>
-              <CardContent>
-                {integrity ? (
-                  <div className="grid grid-cols-2 gap-4">
-                    <div className="text-center p-3 bg-muted/50 rounded-lg">
-                      <div className="text-2xl font-bold">{integrity.consent_active}</div>
-                      <div className="text-xs text-muted-foreground">Active Consents</div>
-                    </div>
-                    <div className="text-center p-3 bg-muted/50 rounded-lg">
-                      <div className={`text-2xl font-bold ${integrity.threats > 0 ? "text-red-500" : ""}`}>
-                        {integrity.threats}
-                      </div>
-                      <div className="text-xs text-muted-foreground">Threats</div>
-                    </div>
-                    <div className="text-center p-3 bg-muted/50 rounded-lg">
-                      <div className="text-2xl font-bold">{integrity.signal_queue}</div>
-                      <div className="text-xs text-muted-foreground">Signal Queue</div>
-                    </div>
-                    <div className="text-center p-3 bg-muted/50 rounded-lg">
-                      <div className="text-2xl font-bold">{integrity.disputes}</div>
-                      <div className="text-xs text-muted-foreground">Disputes</div>
-                    </div>
-                    {integrity.fighter_mode !== "INACTIVE" && (
-                      <div className="col-span-2">
-                        <Badge variant="destructive" className="w-full justify-center py-2">
-                          <AlertTriangle className="h-4 w-4 mr-2" />
-                          Fighter Mode: {integrity.fighter_mode}
-                        </Badge>
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <div className="text-center text-muted-foreground py-8">Loading...</div>
-                )}
-              </CardContent>
-            </Card>
-
-            {/* Issue Consent */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Lock className="h-5 w-5" />
-                  Issue Consent
-                </CardTitle>
-                <CardDescription>Grant time-limited access</CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <Label htmlFor="grantee">Grantee ID</Label>
-                  <Input
-                    id="grantee"
-                    placeholder="agent_id or user_id"
-                    value={grantee}
-                    onChange={(e) => setGrantee(e.target.value)}
-                  />
-                </div>
-                <div>
-                  <Label>Consent Type</Label>
-                  <Select value={consentType} onValueChange={setConsentType}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="data_access">Data Access</SelectItem>
-                      <SelectItem value="signal_share">Signal Sharing</SelectItem>
-                      <SelectItem value="biometric">Biometric Auth</SelectItem>
-                      <SelectItem value="delegate">Delegation</SelectItem>
-                      <SelectItem value="emergency">Emergency Override</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <div>
-                  <Label>Expiry Duration</Label>
-                  <Select value={expiry} onValueChange={setExpiry}>
-                    <SelectTrigger>
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="660">11 min (standard 660ss)</SelectItem>
-                      <SelectItem value="300">5 min (quick)</SelectItem>
-                      <SelectItem value="3600">1 hour (extended)</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                <Button 
-                  onClick={issueConsent} 
-                  disabled={isLoading}
-                  className="w-full bg-gradient-to-r from-indigo-600 to-purple-600"
-                >
-                  {isLoading ? "Issuing..." : "🚀 Issue Consent Grant"}
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Active Grants */}
-          <Card className="mt-6">
+          <Card>
             <CardHeader>
-              <div className="flex items-center justify-between">
-                <div>
-                  <CardTitle className="flex items-center gap-2">
-                    <Clock className="h-5 w-5" />
-                    Active Grants
-                  </CardTitle>
-                  <CardDescription>Auto-expires at 660ss</CardDescription>
-                </div>
-                <Button variant="outline" size="sm" onClick={loadGrants}>
-                  <RefreshCw className="h-4 w-4 mr-2" />
-                  Refresh
-                </Button>
-              </div>
+              <CardTitle>Issue Consent</CardTitle>
+              <CardDescription>Grant time-limited access</CardDescription>
             </CardHeader>
-            <CardContent>
-              {grants.length > 0 ? (
-                <div className="space-y-3">
-                  {grants.map((grant) => (
-                    <div
-                      key={grant.id}
-                      className="flex items-center justify-between p-3 bg-muted/50 rounded-lg"
-                    >
-                      <div>
-                        <div className="font-medium">{grant.consent_type}</div>
-                        <div className="text-sm text-muted-foreground">→ {grant.grantee_id}</div>
-                      </div>
-                      <Badge variant="secondary" className="font-mono">
-                        {getCountdown(grant.expires_at)}
-                      </Badge>
-                    </div>
-                  ))}
-                </div>
-              ) : (
-                <div className="text-center text-muted-foreground py-8">
-                  No active grants
-                </div>
-              )}
+            <CardContent className="space-y-4">
+              <div>
+                <Label htmlFor="grantee">Grantee ID</Label>
+                <Input
+                  id="grantee"
+                  placeholder="agent_id or user_id"
+                  value={grantee}
+                  onChange={(e) => setGrantee(e.target.value)}
+                />
+              </div>
+              <Button onClick={issueConsent} disabled={isLoading} className="w-full">
+                {isLoading ? "Issuing..." : "🚀 Issue Consent Grant"}
+              </Button>
             </CardContent>
           </Card>
         </div>
       </main>
-
       <Footer />
     </div>
   );
