@@ -1,1 +1,183 @@
-CmltcG9ydCB7IFRvYXN0ZXIgfSBmcm9tICJAL2NvbXBvbmVudHMvdWkvdG9hc3RlciI7CmltcG9ydCB7IFRvYXN0ZXIgYXMgU29ubmVyIH0gZnJvbSAiQC9jb21wb25lbnRzL3VpL3Nvbm5lciI7CmltcG9ydCB7IFRvb2x0aXBQcm92aWRlciB9IGZyb20gIkAvY29tcG9uZW50cy91aS90b29sdGlwIjsKaW1wb3J0IHsgUXVlcnlDbGllbnQsIFF1ZXJ5Q2xpZW50UHJvdmlkZXIgfSBmcm9tICJAdGFuc3RhY2svcmVhY3QtcXVlcnkiOwppbXBvcnQgeyBCcm93c2VyUm91dGVyLCBSb3V0ZXMsIFJvdXRlIH0gZnJvbSAicmVhY3Qtcm91dGVyLWRvbSI7CmltcG9ydCB7IHVzZVN0YXRlLCB1c2VFZmZlY3QsIGxhenkgfSBmcm9tICJyZWFjdCI7CmltcG9ydCB7IE1lc3NhZ2VTcXVhcmUsIFgsIFNlbmQgfSBmcm9tICJsdWNpZGUtcmVhY3QiOwppbXBvcnQgeyBIZWxtZXRQcm92aWRlciB9IGZyb20gJ3JlYWN0LWhlbG1ldC1hc3luYyc7CmltcG9ydCBFcnJvckJvdW5kYXJ5IGZyb20gIi4vY29tcG9uZW50cy9FcnJvckJvdW5kYXJ5IjsKaW1wb3J0IExhenlSb3V0ZSBmcm9tICIuL2NvbXBvbmVudHMvTGF6eVJvdXRlIjsKaW1wb3J0IFN0cmlwZVByb3ZpZGVyIGZyb20gIi4vY29tcG9uZW50cy9TdHJpcGVQcm92aWRlciI7CmltcG9ydCB7IHVzZVBlcmZvcm1hbmNlIH0gZnJvbSAiLi9ob29rcy91c2VQZXJmb3JtYW5jZSI7CgovLyBMYXp5IGxvYWQgcGFnZXMgZm9yIGJldHRlciBwZXJmb3JtYW5jZQpjb25zdCBJbmRleCA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0luZGV4IikpOwpjb25zdCBOb3RGb3VuZCA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL05vdEZvdW5kIikpOwpjb25zdCBEbnNTZXR0aW5ncyA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0Ruc1NldHRpbmdzIikpOwpjb25zdCBGZWF0dXJlcyA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0ZlYXR1cmVzIikpOwpjb25zdCBQcmljaW5nID0gbGF6eSgoKSA9PiBpbXBvcnQoIi4vcGFnZXMvUHJpY2luZyIpKTsKY29uc3QgQWJvdXQgPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9BYm91dCIpKTsKY29uc3QgQ29udGFjdCA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0NvbnRhY3QiKSk7CmNvbnN0IEJsb2cgPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9CbG9nIikpOwpjb25zdCBTaWduSW4gPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9TaWduSW4iKSk7CmNvbnN0IEF1dGggPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9BdXRoIikpOwpjb25zdCBGb3Jnb3RQYXNzd29yZCA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0ZvcmdvdFBhc3N3b3JkIikpOwpjb25zdCBHZXRTdGFydGVkID0gbGF6eSgoKSA9PiBpbXBvcnQoIi4vcGFnZXMvR2V0U3RhcnRlZCIpKTsKY29uc3QgQ2FzZVN0dWRpZXMgPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9DYXNlU3R1ZGllcyIpKTsKY29uc3QgQ2FyZWVycyA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0NhcmVlcnMiKSk7CmNvbnN0IFByaXZhY3lQb2xpY3kgPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9Qcml2YWN5UG9saWN5IikpOwpjb25zdCBUZXJtc09mU2VydmljZSA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL1Rlcm1zT2ZTZXJ2aWNlIikpOwpjb25zdCBDb29raWVQb2xpY3kgPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9Db29raWVQb2xpY3kiKSk7CmNvbnN0IFNlY3VyaXR5ID0gbGF6eSgoKSA9PiBpbXBvcnQoIi4vcGFnZXMvU2VjdXJpdHkiKSk7CmNvbnN0IEJsb2dBcnRpY2xlID0gbGF6eSgoKSA9PiBpbXBvcnQoIi4vcGFnZXMvQmxvZ0FydGljbGUiKSk7CmNvbnN0IFJlc291cmNlcyA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL1Jlc291cmNlcyIpKTsKY29uc3QgQ2FsY3VsYXRvciA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0NhbGN1bGF0b3IiKSk7CmNvbnN0IERlbW8gPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9EZW1vIikpOwpjb25zdCBGcmVlVHJpYWwgPSBsYXp5KCgpID0+IGltcG9ydCgiLi9wYWdlcy9GcmVlVHJpYWwiKSk7CmNvbnN0IEFkbWluID0gbGF6eSgoKSA9PiBpbXBvcnQoIi4vcGFnZXMvQWRtaW4iKSk7CmNvbnN0IERhc2hib2FyZCA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0Rhc2hib2FyZCIpKTsKY29uc3QgQ29uc2VudElzc3VlciA9IGxhenkoKCkgPT4gaW1wb3J0KCIuL3BhZ2VzL0NvbnNlbnRJc3N1ZXIiKSk7Cgpjb25zdCBxdWVyeUNsaWVudCA9IG5ldyBRdWVyeUNsaWVudCh7CiAgZGVmYXVsdE9wdGlvbnM6IHsKICAgIHF1ZXJpZXM6IHsKICAgICAgc3RhbGVUaW1lOiAxMDAwICogNjAgKiA1LCAvLyA1IG1pbnV0ZXMKICAgICAgcmV0cnk6IChmYWlsdXJlQ291bnQsIGVycm9yKSA9PiB7CiAgICAgICAgLy8gRG9uJ3QgcmV0cnkgb24gNHh4IGVycm9ycwogICAgICAgIGlmIChlcnJvciAmJiAnc3RhdHVzJyBpbiBlcnJvciAmJiB0eXBlb2YgZXJyb3Iuc3RhdHVzID09PSAnbnVtYmVyJykgewogICAgICAgICAgcmV0dXJuIGVycm9yLnN0YXR1cyA+PSA1MDAgJiYgZmFpbHVyZUNvdW50IDwgMzsKICAgICAgICB9CiAgICAgICAgcmV0dXJuIGZhaWx1cmVDb3VudCA8IDM7CiAgICAgIH0sCiAgICB9LAogIH0sCn0pOwoKY29uc3QgQXBwID0gKCkgPT4gewogIGNvbnN0IFtzaG93Q2hhdCwgc2V0U2hvd0NoYXRdID0gdXNlU3RhdGUoZmFsc2UpOwogIGNvbnN0IFtpc0luaXRpYWxWaWV3LCBzZXRJc0luaXRpYWxWaWV3XSA9IHVzZVN0YXRlKHRydWUpOwogIAogIC8vIFVzZSBwZXJmb3JtYW5jZSBtb25pdG9yaW5nCiAgdXNlUGVyZm9ybWFuY2UoKTsKCiAgdXNlRWZmZWN0KCgpID0+IHsKICAgIC8vIEFmdGVyIDUgc2Vjb25kcywgc2hvdyB0aGUgY2hhdCBidWJibGUKICAgIGNvbnN0IHRpbWVyID0gc2V0VGltZW91dCgoKSA9PiB7CiAgICAgIHNldElzSW5pdGlhbFZpZXcoZmFsc2UpOwogICAgfSwgNTAwMCk7CiAgICAKICAgIHJldHVybiAoKSA9PiBjbGVhclRpbWVvdXQodGltZXIpOwogIH0sIFtdKTsKCiAgY29uc3QgdG9nZ2xlQ2hhdCA9ICgpID0+IHsKICAgIHNldFNob3dDaGF0KCFzaG93Q2hhdCk7CiAgfTsKCiAgcmV0dXJuICgKICAgIDxFcnJvckJvdW5kYXJ5PgogICAgICA8SGVsbWV0UHJvdmlkZXI+CiAgICAgICAgPFF1ZXJ5Q2xpZW50UHJvdmlkZXIgY2xpZW50PXtxdWVyeUNsaWVudH0+CiAgICAgICAgICA8VG9vbHRpcFByb3ZpZGVyPgogICAgICAgICAgICA8U3RyaXBlUHJvdmlkZXI+CiAgICAgICAgICAgICAgPFRvYXN0ZXIgLz4KICAgICAgICAgICAgICA8U29ubmVyIC8+CiAgICAgICAgICAgICAgPEJyb3dzZXJSb3V0ZXI+CiAgICAgICAgICAgICAgICA8Um91dGVzPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iLyIgZWxlbWVudD17PExhenlSb3V0ZT48SW5kZXggLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvYWJvdXQiIGVsZW1lbnQ9ezxMYXp5Um91dGU+PEFib3V0IC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2ZlYXR1cmVzIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxGZWF0dXJlcyAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9wcmljaW5nIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxQcmljaW5nIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2RlbW8iIGVsZW1lbnQ9ezxMYXp5Um91dGU+PERlbW8gLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvZnJlZS10cmlhbCIgZWxlbWVudD17PExhenlSb3V0ZT48RnJlZVRyaWFsIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2FkbWluIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxBZG1pbiAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9kYXNoYm9hcmQiIGVsZW1lbnQ9ezxMYXp5Um91dGU+PERhc2hib2FyZCAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9jb25zZW50IiBlbGVtZW50PXs8TGF6eVJvdXRlPjxDb25zZW50SXNzdWVyIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2Rucy1zZXR0aW5ncyIgZWxlbWVudD17PExhenlSb3V0ZT48RG5zU2V0dGluZ3MgLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvYmxvZyIgZWxlbWVudD17PExhenlSb3V0ZT48QmxvZyAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9ibG9nLzpzbHVnIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxCbG9nQXJ0aWNsZSAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9jb250YWN0IiBlbGVtZW50PXs8TGF6eVJvdXRlPjxDb250YWN0IC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL3NpZ24taW4iIGVsZW1lbnQ9ezxMYXp5Um91dGU+PFNpZ25JbiAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9hdXRoIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxBdXRoIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2ZvcmdvdC1wYXNzd29yZCIgZWxlbWVudD17PExhenlSb3V0ZT48Rm9yZ290UGFzc3dvcmQgLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvZ2V0LXN0YXJ0ZWQiIGVsZW1lbnQ9ezxMYXp5Um91dGU+PEdldFN0YXJ0ZWQgLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvY2FzZS1zdHVkaWVzIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxDYXNlU3R1ZGllcyAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9jYXJlZXJzIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxDYXJlZXJzIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL3ByaXZhY3ktcG9saWN5IiBlbGVtZW50PXs8TGF6eVJvdXRlPjxQcml2YWN5UG9saWN5IC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL3Rlcm1zLW9mLXNlcnZpY2UiIGVsZW1lbnQ9ezxMYXp5Um91dGU+PFRlcm1zT2ZTZXJ2aWNlIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgICA8Um91dGUgcGF0aD0iL2Nvb2tpZS1wb2xpY3kiIGVsZW1lbnQ9ezxMYXp5Um91dGU+PENvb2tpZVBvbGljeSAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9Ii9zZWN1cml0eSIgZWxlbWVudD17PExhenlSb3V0ZT48U2VjdXJpdHkgLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvcmVzb3VyY2VzIiBlbGVtZW50PXs8TGF6eVJvdXRlPjxSZXNvdXJjZXMgLz48L0xhenlSb3V0ZT59IC8+CiAgICAgICAgICAgICAgICAgIDxSb3V0ZSBwYXRoPSIvY2FsY3VsYXRvciIgZWxlbWVudD17PExhenlSb3V0ZT48Q2FsY3VsYXRvciAvPjwvTGF6eVJvdXRlPn0gLz4KICAgICAgICAgICAgICAgICAgPFJvdXRlIHBhdGg9IioiIGVsZW1lbnQ9ezxMYXp5Um91dGU+PE5vdEZvdW5kIC8+PC9MYXp5Um91dGU+fSAvPgogICAgICAgICAgICAgICAgPC9Sb3V0ZXM+CiAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgIHsvKiBHbG9iYWwgTGl2ZSBDaGF0ICovfQogICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImZpeGVkIGJvdHRvbS02IHJpZ2h0LTYgei01MCI+CiAgICAgICAgICAgICAgICAgIHtpc0luaXRpYWxWaWV3ICYmICFzaG93Q2hhdCAmJiAoCiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImFic29sdXRlIGJvdHRvbS0yMCByaWdodC0wIHctNzIgcC00IGJnLWJhY2tncm91bmQvOTUgYmFja2Ryb3AtYmx1ci1tZCByb3VuZGVkLXhsIGJvcmRlciBib3JkZXItYm9yZGVyIHNoYWRvdy1sZyBhbmltYXRlLWZhZGUtdXAgbWItMiI+CiAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20iPk5lZWQgaGVscCBwcm90ZWN0aW5nIHlvdXIgQUkgYXNzZXRzPyBDaGF0IHdpdGggdXMgbm93ITwvcD4KICAgICAgICAgICAgICAgICAgICAgIDxidXR0b24gCiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHsKICAgICAgICAgICAgICAgICAgICAgICAgICBzZXRTaG93Q2hhdCh0cnVlKTsKICAgICAgICAgICAgICAgICAgICAgICAgICBzZXRJc0luaXRpYWxWaWV3KGZhbHNlKTsKICAgICAgICAgICAgICAgICAgICAgICAgfX0KICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJtdC0zIHRleHQtc20gdGV4dC1pbmRpZ28tNjAwIGZvbnQtbWVkaXVtIgogICAgICAgICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICAgICAgICBTdGFydCBjaGF0CiAgICAgICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICAgICAgIDxidXR0b24gCiAgICAgICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9eygpID0+IHNldElzSW5pdGlhbFZpZXcoZmFsc2UpfQogICAgICAgICAgICAgICAgICAgICAgICBjbGFzc05hbWU9ImFic29sdXRlIHRvcC0yIHJpZ2h0LTIgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIGhvdmVyOnRleHQtZm9yZWdyb3VuZCIKICAgICAgICAgICAgICAgICAgICAgID4KICAgICAgICAgICAgICAgICAgICAgICAgPFggY2xhc3NOYW1lPSJoLTQgdy00IiAvPgogICAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICA8YnV0dG9uIAogICAgICAgICAgICAgICAgICAgIG9uQ2xpY2s9e3RvZ2dsZUNoYXR9CiAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJiZy1ncmFkaWVudC10by1yIGZyb20taW5kaWdvLTYwMCB0by1wdXJwbGUtNjAwIHRleHQtd2hpdGUgcC00IHJvdW5kZWQtZnVsbCBzaGFkb3ctbGcgaG92ZXI6ZnJvbS1pbmRpZ28tNzAwIGhvdmVyOnRvLXB1cnBsZS03MDAgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIgogICAgICAgICAgICAgICAgICAgIGFyaWEtbGFiZWw9IkxpdmUgQ2hhdCIKICAgICAgICAgICAgICAgICAgPgogICAgICAgICAgICAgICAgICAgIHtzaG93Q2hhdCA/IDxYIGNsYXNzTmFtZT0iaC02IHctNiIgLz4gOiA8TWVzc2FnZVNxdWFyZSBjbGFzc05hbWU9ImgtNiB3LTYiIC8+fQogICAgICAgICAgICAgICAgICA8L2J1dHRvbj4KICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgIHtzaG93Q2hhdCAmJiAoCiAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImFic29sdXRlIGJvdHRvbS0yMCByaWdodC0wIHctODAgYmctYmFja2dyb3VuZCBib3JkZXIgYm9yZGVyLWJvcmRlciByb3VuZGVkLXhsIHNoYWRvdy14bCBhbmltYXRlLWZhZGUtdXAiPgogICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImJnLWdyYWRpZW50LXRvLXIgZnJvbS1pbmRpZ28tNjAwIHRvLXB1cnBsZS02MDAgdGV4dC13aGl0ZSBwLTQgcm91bmRlZC10LXhsIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGgzIGNsYXNzTmFtZT0iZm9udC1zZW1pYm9sZCI+TGl2ZSBDaGF0IFN1cHBvcnQ8L2gzPgogICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20gb3BhY2l0eS05MCI+V2UgdHlwaWNhbGx5IHJlcGx5IGluIGEgZmV3IG1pbnV0ZXM8L3A+CiAgICAgICAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICAgICAgICAgIDxkaXYgY2xhc3NOYW1lPSJwLTQgaC04MCBiZy1iYWNrZ3JvdW5kLzgwIGJhY2tkcm9wLWJsdXItc20gb3ZlcmZsb3cteS1hdXRvIj4KICAgICAgICAgICAgICAgICAgICAgICAgPGRpdiBjbGFzc05hbWU9ImJnLW11dGVkLzUwIHAtMyByb3VuZGVkLWxnIGlubGluZS1ibG9jayBtYXgtdy1bODAlXSBtYi0zIj4KICAgICAgICAgICAgICAgICAgICAgICAgICA8cCBjbGFzc05hbWU9InRleHQtc20iPkhlbGxvISBIb3cgY2FuIHdlIGhlbHAgeW91IHdpdGggeW91ciBBSSBwcm90ZWN0aW9uIG5lZWRzIHRvZGF5PzwvcD4KICAgICAgICAgICAgICAgICAgICAgICAgICA8c3BhbiBjbGFzc05hbWU9InRleHQteHMgdGV4dC1tdXRlZC1mb3JlZ3JvdW5kIG10LTEgYmxvY2siPlN1cHBvcnQgVGVhbSwganVzdCBub3c8L3NwYW4+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0icC00IGJvcmRlci10IGJvcmRlci1ib3JkZXIiPgogICAgICAgICAgICAgICAgICAgICAgICA8ZGl2IGNsYXNzTmFtZT0iZmxleCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgPGlucHV0IAogICAgICAgICAgICAgICAgICAgICAgICAgICAgdHlwZT0idGV4dCIgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICBwbGFjZWhvbGRlcj0iVHlwZSB5b3VyIG1lc3NhZ2UuLi4iIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgY2xhc3NOYW1lPSJmbGV4LTEgcC0yIGJvcmRlciBib3JkZXItYm9yZGVyIHJvdW5kZWQtbC1tZCBmb2N1czpvdXRsaW5lLW5vbmUgZm9jdXM6cmluZy0xIGZvY3VzOnJpbmctaW5kaWdvLTUwMCIKICAgICAgICAgICAgICAgICAgICAgICAgICAvPgogICAgICAgICAgICAgICAgICAgICAgICAgIDxidXR0b24gY2xhc3NOYW1lPSJiZy1pbmRpZ28tNjAwIHRleHQtd2hpdGUgcC0yIHJvdW5kZWQtci1tZCI+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICA8U2VuZCBjbGFzc05hbWU9ImgtNCB3LTQiIC8+CiAgICAgICAgICAgICAgICAgICAgICAgICAgPC9idXR0b24+CiAgICAgICAgICAgICAgICAgICAgICAgIDwvZGl2PgogICAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICAgPC9kaXY+CiAgICAgICAgICAgICAgICAgICl9CiAgICAgICAgICAgICAgICA8L2Rpdj4KICAgICAgICAgICAgICA8L0Jyb3dzZXJSb3V0ZXI+CiAgICAgICAgICAgIDwvU3RyaXBlUHJvdmlkZXI+CiAgICAgICAgICA8L1Rvb2x0aXBQcm92aWRlcj4KICAgICAgICA8L1F1ZXJ5Q2xpZW50UHJvdmlkZXI+CiAgICAgIDwvSGVsbWV0UHJvdmlkZXI+CiAgICA8L0Vycm9yQm91bmRhcnk+CiAgKTsKfTsKCmV4cG9ydCBkZWZhdWx0IEFwcDsK
+
+import { Toaster } from "@/components/ui/toaster";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState, useEffect, lazy } from "react";
+import { MessageSquare, X, Send } from "lucide-react";
+import { HelmetProvider } from 'react-helmet-async';
+import ErrorBoundary from "./components/ErrorBoundary";
+import LazyRoute from "./components/LazyRoute";
+import StripeProvider from "./components/StripeProvider";
+import { usePerformance } from "./hooks/usePerformance";
+
+// Lazy load pages for better performance
+const Index = lazy(() => import("./pages/Index"));
+const NotFound = lazy(() => import("./pages/NotFound"));
+const DnsSettings = lazy(() => import("./pages/DnsSettings"));
+const Features = lazy(() => import("./pages/Features"));
+const Pricing = lazy(() => import("./pages/Pricing"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
+const Blog = lazy(() => import("./pages/Blog"));
+const SignIn = lazy(() => import("./pages/SignIn"));
+const Auth = lazy(() => import("./pages/Auth"));
+const ForgotPassword = lazy(() => import("./pages/ForgotPassword"));
+const GetStarted = lazy(() => import("./pages/GetStarted"));
+const CaseStudies = lazy(() => import("./pages/CaseStudies"));
+const Careers = lazy(() => import("./pages/Careers"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
+const TermsOfService = lazy(() => import("./pages/TermsOfService"));
+const CookiePolicy = lazy(() => import("./pages/CookiePolicy"));
+const Security = lazy(() => import("./pages/Security"));
+const BlogArticle = lazy(() => import("./pages/BlogArticle"));
+const Resources = lazy(() => import("./pages/Resources"));
+const Calculator = lazy(() => import("./pages/Calculator"));
+const Demo = lazy(() => import("./pages/Demo"));
+const FreeTrial = lazy(() => import("./pages/FreeTrial"));
+const Admin = lazy(() => import("./pages/Admin"));
+const Dashboard = lazy(() => import("./pages/Dashboard"));
+const ConsentIssuer = lazy(() => import("./pages/ConsentIssuer"));
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      retry: (failureCount, error) => {
+        // Don't retry on 4xx errors
+        if (error && 'status' in error && typeof error.status === 'number') {
+          return error.status >= 500 && failureCount < 3;
+        }
+        return failureCount < 3;
+      },
+    },
+  },
+});
+
+const App = () => {
+  const [showChat, setShowChat] = useState(false);
+  const [isInitialView, setIsInitialView] = useState(true);
+  
+  // Use performance monitoring
+  usePerformance();
+
+  useEffect(() => {
+    // After 5 seconds, show the chat bubble
+    const timer = setTimeout(() => {
+      setIsInitialView(false);
+    }, 5000);
+    
+    return () => clearTimeout(timer);
+  }, []);
+
+  const toggleChat = () => {
+    setShowChat(!showChat);
+  };
+
+  return (
+    <ErrorBoundary>
+      <HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+          <TooltipProvider>
+            <StripeProvider>
+              <Toaster />
+              <Sonner />
+              <BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<LazyRoute><Index /></LazyRoute>} />
+                  <Route path="/about" element={<LazyRoute><About /></LazyRoute>} />
+                  <Route path="/features" element={<LazyRoute><Features /></LazyRoute>} />
+                  <Route path="/pricing" element={<LazyRoute><Pricing /></LazyRoute>} />
+                  <Route path="/demo" element={<LazyRoute><Demo /></LazyRoute>} />
+                  <Route path="/free-trial" element={<LazyRoute><FreeTrial /></LazyRoute>} />
+                  <Route path="/admin" element={<LazyRoute><Admin /></LazyRoute>} />
+                  <Route path="/dashboard" element={<LazyRoute><Dashboard /></LazyRoute>} />
+                  <Route path="/consent" element={<LazyRoute><ConsentIssuer /></LazyRoute>} />
+                  <Route path="/dns-settings" element={<LazyRoute><DnsSettings /></LazyRoute>} />
+                  <Route path="/blog" element={<LazyRoute><Blog /></LazyRoute>} />
+                  <Route path="/blog/:slug" element={<LazyRoute><BlogArticle /></LazyRoute>} />
+                  <Route path="/contact" element={<LazyRoute><Contact /></LazyRoute>} />
+                  <Route path="/sign-in" element={<LazyRoute><SignIn /></LazyRoute>} />
+                  <Route path="/auth" element={<LazyRoute><Auth /></LazyRoute>} />
+                  <Route path="/forgot-password" element={<LazyRoute><ForgotPassword /></LazyRoute>} />
+                  <Route path="/get-started" element={<LazyRoute><GetStarted /></LazyRoute>} />
+                  <Route path="/case-studies" element={<LazyRoute><CaseStudies /></LazyRoute>} />
+                  <Route path="/careers" element={<LazyRoute><Careers /></LazyRoute>} />
+                  <Route path="/privacy-policy" element={<LazyRoute><PrivacyPolicy /></LazyRoute>} />
+                  <Route path="/terms-of-service" element={<LazyRoute><TermsOfService /></LazyRoute>} />
+                  <Route path="/cookie-policy" element={<LazyRoute><CookiePolicy /></LazyRoute>} />
+                  <Route path="/security" element={<LazyRoute><Security /></LazyRoute>} />
+                  <Route path="/resources" element={<LazyRoute><Resources /></LazyRoute>} />
+                  <Route path="/calculator" element={<LazyRoute><Calculator /></LazyRoute>} />
+                  <Route path="*" element={<LazyRoute><NotFound /></LazyRoute>} />
+                </Routes>
+                
+                {/* Global Live Chat */}
+                <div className="fixed bottom-6 right-6 z-50">
+                  {isInitialView && !showChat && (
+                    <div className="absolute bottom-20 right-0 w-72 p-4 bg-background/95 backdrop-blur-md rounded-xl border border-border shadow-lg animate-fade-up mb-2">
+                      <p className="text-sm">Need help protecting your AI assets? Chat with us now!</p>
+                      <button 
+                        onClick={() => {
+                          setShowChat(true);
+                          setIsInitialView(false);
+                        }}
+                        className="mt-3 text-sm text-indigo-600 font-medium"
+                      >
+                        Start chat
+                      </button>
+                      <button 
+                        onClick={() => setIsInitialView(false)}
+                        className="absolute top-2 right-2 text-muted-foreground hover:text-foreground"
+                      >
+                        <X className="h-4 w-4" />
+                      </button>
+                    </div>
+                  )}
+                  
+                  <button 
+                    onClick={toggleChat}
+                    className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-full shadow-lg hover:from-indigo-700 hover:to-purple-700 transition-all duration-300"
+                    aria-label="Live Chat"
+                  >
+                    {showChat ? <X className="h-6 w-6" /> : <MessageSquare className="h-6 w-6" />}
+                  </button>
+                  
+                  {showChat && (
+                    <div className="absolute bottom-20 right-0 w-80 bg-background border border-border rounded-xl shadow-xl animate-fade-up">
+                      <div className="bg-gradient-to-r from-indigo-600 to-purple-600 text-white p-4 rounded-t-xl">
+                        <h3 className="font-semibold">Live Chat Support</h3>
+                        <p className="text-sm opacity-90">We typically reply in a few minutes</p>
+                      </div>
+                      <div className="p-4 h-80 bg-background/80 backdrop-blur-sm overflow-y-auto">
+                        <div className="bg-muted/50 p-3 rounded-lg inline-block max-w-[80%] mb-3">
+                          <p className="text-sm">Hello! How can we help you with your AI protection needs today?</p>
+                          <span className="text-xs text-muted-foreground mt-1 block">Support Team, just now</span>
+                        </div>
+                      </div>
+                      <div className="p-4 border-t border-border">
+                        <div className="flex">
+                          <input 
+                            type="text" 
+                            placeholder="Type your message..." 
+                            className="flex-1 p-2 border border-border rounded-l-md focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                          />
+                          <button className="bg-indigo-600 text-white p-2 rounded-r-md">
+                            <Send className="h-4 w-4" />
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </BrowserRouter>
+            </StripeProvider>
+          </TooltipProvider>
+        </QueryClientProvider>
+      </HelmetProvider>
+    </ErrorBoundary>
+  );
+};
+
+export default App;
