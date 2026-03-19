@@ -11,6 +11,7 @@ interface CheckoutRequest {
   planName: string;
   amount: number;
   email: string;
+  priceId?: string;
   successUrl?: string;
   cancelUrl?: string;
 }
@@ -22,84 +23,72 @@ const handler = async (req: Request): Promise<Response> => {
 
   try {
     const stripeSecretKey = Deno.env.get("STRIPE_SECRET_KEY");
-    if (!stripeSecretKey) {
-      console.error("STRIPE_SECRET_KEY is not configured");
-      throw new Error("Stripe is not configured");
-    }
+    if (!stripeSecretKey) throw new Error("Stripe is not configured");
 
-    const stripe = new Stripe(stripeSecretKey, {
-      apiVersion: "2023-10-16",
-    });
+    const stripe = new Stripe(stripeSecretKey, { apiVersion: "2023-10-16" });
 
-    const { planName, amount, email, successUrl, cancelUrl }: CheckoutRequest = await req.json();
-    
-    console.log("Creating checkout session for:", { planName, amount, email });
+    const { planName, amount, email, priceId, successUrl, cancelUrl }: CheckoutRequest = await req.json();
 
-    if (!planName || !amount || !email) {
-      throw new Error("Missing required fields: planName, amount, or email");
-    }
+    if (!email) throw new Error("Missing required field: email");
 
-    const origin = req.headers.get("origin") || "https://ghvwogfpfzpwfzoxbeix.lovableproject.com";
-    
-    // Create Stripe checkout session
-    const session = await stripe.checkout.sessions.create({
+    const finalSuccessUrl = successUrl || "https://ownyourai.org/thank-you?session_id={CHECKOUT_SESSION_ID}";
+    const finalCancelUrl = cancelUrl || "https://ownyourai.org/products";
+
+    let sessionConfig: any = {
       payment_method_types: ["card"],
-      mode: "subscription",
       customer_email: email,
-      line_items: [
-        {
-          price_data: {
-            currency: "usd",
-            product_data: {
-              name: `${planName} Plan`,
-              description: `Subscription to ${planName} plan`,
-            },
-            unit_amount: amount,
-            recurring: {
-              interval: "month",
-            },
-          },
-          quantity: 1,
+      success_url: finalSuccessUrl,
+      cancel_url: finalCancelUrl,
+      allow_promotion_codes: true,
+      billing_address_collection: "auto",
+      metadata: { planName, site: "ownyourai" },
+    };
+
+    if (priceId) {
+      // Use canonical price ID — one-time payment
+      sessionConfig.mode = "payment";
+      sessionConfig.line_items = [{ price: priceId, quantity: 1 }];
+    } else {
+      // Legacy: price_data path
+      if (!planName || !amount) throw new Error("Missing required fields: planName or amount");
+      sessionConfig.mode = "payment";
+      sessionConfig.line_items = [{
+        price_data: {
+          currency: "aud",
+          product_data: { name: planName, description: `Own Your AI — ${planName}` },
+          unit_amount: Math.round(amount * 100),
         },
-      ],
-      success_url: successUrl || `${origin}/get-started?success=true&session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: cancelUrl || `${origin}/get-started?canceled=true`,
-    });
+        quantity: 1,
+      }];
+    }
 
-    console.log("Checkout session created:", session.id);
+    const session = await stripe.checkout.sessions.create(sessionConfig);
 
-    // Store the subscription record
-    const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
-    const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
-    const supabase = createClient(supabaseUrl, supabaseServiceKey);
-
-    const { error: dbError } = await supabase.from("subscriptions").insert({
-      user_email: email,
-      plan_name: planName,
-      stripe_session_id: session.id,
-      amount_cents: amount,
-      status: "pending",
-    });
-
-    if (dbError) {
-      console.error("Error saving subscription:", dbError);
+    // Log to Supabase
+    try {
+      const supabaseUrl = Deno.env.get("SUPABASE_URL")!;
+      const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!;
+      const supabase = createClient(supabaseUrl, supabaseServiceKey);
+      await supabase.from("subscriptions").insert({
+        user_email: email,
+        plan_name: planName,
+        stripe_session_id: session.id,
+        amount_cents: amount ? Math.round(amount * 100) : null,
+        status: "pending",
+      });
+    } catch (dbErr) {
+      console.error("DB log error (non-fatal):", dbErr);
     }
 
     return new Response(
       JSON.stringify({ url: session.url, sessionId: session.id }),
-      {
-        status: 200,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (error: any) {
-    console.error("Error creating checkout session:", error);
+    console.error("Checkout session error:", error);
     return new Response(
       JSON.stringify({ error: error.message }),
-      {
-        status: 500,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      }
+      { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }
 };
