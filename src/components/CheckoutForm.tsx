@@ -8,46 +8,40 @@ import { supabase } from '@/integrations/supabase/client';
 interface CheckoutFormProps {
   amount: number;
   productName: string;
+  priceId?: string | null;
   onSuccess?: () => void;
   onCancel?: () => void;
 }
 
-const CheckoutForm: React.FC<CheckoutFormProps> = ({ 
-  amount, 
+const CheckoutForm: React.FC<CheckoutFormProps> = ({
+  amount,
   productName,
+  priceId,
   onSuccess,
-  onCancel
+  onCancel,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [email, setEmail] = useState('');
 
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
-
     if (!email) {
-      toast({
-        title: 'Email Required',
-        description: 'Please enter your email address to continue.',
-        variant: 'destructive',
-      });
+      toast({ title: 'Email Required', description: 'Please enter your email address.', variant: 'destructive' });
       return;
     }
-
     setIsLoading(true);
-
     try {
-      const { data, error } = await supabase.functions.invoke('create-checkout-session', {
-        body: {
-          planName: productName,
-          amount: amount,
-          email: email,
-        },
-      });
+      const payload: any = {
+        planName: productName,
+        amount: amount / 100, // edge fn expects dollars
+        email,
+        successUrl: 'https://ownyourai.org/thank-you?session_id={CHECKOUT_SESSION_ID}',
+        cancelUrl: 'https://ownyourai.org/products',
+      };
+      if (priceId) payload.priceId = priceId;
 
-      if (error) {
-        throw error;
-      }
-
+      const { data, error } = await supabase.functions.invoke('create-checkout-session', { body: payload });
+      if (error) throw error;
       if (data?.url) {
         window.location.href = data.url;
       } else {
@@ -55,11 +49,7 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
       }
     } catch (err: any) {
       console.error('Payment error:', err);
-      toast({
-        title: 'Payment Error',
-        description: err.message || 'An error occurred while processing your payment. Please try again.',
-        variant: 'destructive',
-      });
+      toast({ title: 'Payment Error', description: err.message || 'An error occurred. Please try again.', variant: 'destructive' });
       setIsLoading(false);
     }
   };
@@ -78,35 +68,15 @@ const CheckoutForm: React.FC<CheckoutFormProps> = ({
           autoComplete="off"
           className="bg-background"
         />
-        <p className="text-sm text-muted-foreground">
-          You'll be redirected to Stripe's secure checkout to complete your payment.
-        </p>
       </div>
-
-      <div className="bg-muted/50 rounded-lg p-4">
-        <div className="flex justify-between items-center">
-          <span className="font-medium">{productName} Plan</span>
-          <span className="text-lg font-bold">${(amount / 100).toFixed(2)}/mo</span>
-        </div>
-      </div>
-
-      <div className="flex space-x-4">
-        <Button
-          type="button"
-          variant="outline"
-          className="flex-1"
-          onClick={onCancel}
-        >
+      <Button type="submit" className="w-full" disabled={isLoading}>
+        {isLoading ? 'Processing...' : `Pay${amount > 0 ? ' AUD $' + (amount / 100).toFixed(0) : ''}`}
+      </Button>
+      {onCancel && (
+        <Button type="button" variant="outline" className="w-full" onClick={onCancel}>
           Cancel
         </Button>
-        <Button 
-          type="submit" 
-          className="flex-1"
-          disabled={isLoading}
-        >
-          {isLoading ? 'Redirecting...' : 'Continue to Payment'}
-        </Button>
-      </div>
+      )}
     </form>
   );
 };
