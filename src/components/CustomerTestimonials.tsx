@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import GlassCard from './ui/GlassCard';
 import { Quote, Star } from 'lucide-react';
@@ -16,7 +15,7 @@ interface Testimonial {
 
 const testimonials: Testimonial[] = [
   {
-    quote: "After implementing OwnYourAI's protection, our unauthorized model usage dropped by 82% in just three months. The ROI has been incredible.",
+    quote: "After implementing OwnMyAI's protection, our unauthorized model usage dropped by 82% in just three months. The ROI has been incredible.",
     author: "Sarah Chen",
     position: "CTO",
     company: "TechVision AI",
@@ -85,24 +84,17 @@ interface Props {
 const CustomerTestimonials: React.FC<Props> = ({ className = "", limit }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
-  
   const displayTestimonials = limit ? testimonials.slice(0, limit) : testimonials;
 
   useEffect(() => {
     const handleScroll = () => {
       if (!containerRef.current) return;
-      
       const rect = containerRef.current.getBoundingClientRect();
       const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-      
       if (isVisible) {
         cardsRef.current.forEach((card, index) => {
           if (!card) return;
-          
-          // Calculate delay based on index for staggered animation
           const delay = index * 150;
-          
-          // Apply staggered animation
           setTimeout(() => {
             card.style.opacity = '1';
             card.style.transform = 'translateY(0)';
@@ -110,46 +102,35 @@ const CustomerTestimonials: React.FC<Props> = ({ className = "", limit }) => {
         });
       }
     };
-
-    // Initialize
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
-    
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const renderStars = (rating: number) => {
     return Array.from({ length: 5 }).map((_, i) => (
-      <Star 
-        key={i} 
-        className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} 
-      />
+      <Star key={i} className={`h-4 w-4 ${i < rating ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`} />
     ));
   };
 
   return (
-    <section ref={containerRef} className={`py-20 md:py-28 px-6 md:px-8 overflow-hidden relative ${className}`}>
-      {/* Background Image */}
-      <div className="absolute inset-0 -z-10 opacity-5">
-        <img 
-          src="https://images.unsplash.com/photo-1612367289890-5be95cb5a42e?q=80&w=2671&auto=format&fit=crop" 
-          alt="Technology background" 
-          className="w-full h-full object-cover"
+    <section ref={containerRef} className={`py-24 relative overflow-hidden ${className}`}>
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1965&auto=format&fit=crop"
+          alt="Technology background"
+          className="w-full h-full object-cover opacity-5"
         />
       </div>
-      
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10">
         <div className="text-center mb-16">
-          <div className="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-500/20 text-indigo-600 text-sm font-medium mb-6">
-            Success Stories
-          </div>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">What Our Clients Say</h2>
+          <p className="text-sm font-medium text-primary uppercase tracking-wider mb-3">Success Stories</p>
+          <h2 className="text-4xl font-bold mb-4">What Our Clients Say</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Join the companies who have successfully protected and monetized their AI assets with our comprehensive solutions.
           </p>
         </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {displayTestimonials.map((testimonial, index) => (
             <div
               key={index}
@@ -157,32 +138,27 @@ const CustomerTestimonials: React.FC<Props> = ({ className = "", limit }) => {
               className="opacity-0 transform translate-y-8 transition-all duration-700"
               style={{ transitionDelay: `${index * 100}ms` }}
             >
-              <GlassCard className={`h-full p-8 flex flex-col ${testimonial.gradient}`}>
-                <div className="flex justify-between items-start mb-6">
-                  <Quote className={`h-8 w-8 ${testimonial.textColor}`} />
-                  <div className="flex">{renderStars(testimonial.rating)}</div>
-                </div>
-                
-                <p className="text-lg mb-6 flex-grow italic">{testimonial.quote}</p>
-                
-                <div className="flex items-center">
-                  <div className="h-12 w-12 rounded-full overflow-hidden mr-4">
-                    <img 
-                      src={testimonial.image} 
-                      alt={testimonial.author}
-                      className="h-full w-full object-cover"
-                    />
-                  </div>
+              <GlassCard className={`h-full p-6 ${testimonial.gradient}`}>
+                <div className="flex mb-3">{renderStars(testimonial.rating)}</div>
+                <Quote className={`h-6 w-6 ${testimonial.textColor} mb-3 opacity-60`} />
+                <p className="text-foreground/90 mb-6 leading-relaxed">{testimonial.quote}</p>
+                <div className="flex items-center gap-3 mt-auto">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.author}
+                    className="w-10 h-10 rounded-full object-cover"
+                  />
                   <div>
-                    <p className="font-semibold">{testimonial.author}</p>
-                    <p className={`text-sm ${testimonial.textColor}`}>
-                      {testimonial.position}, {testimonial.company}
-                    </p>
+                    <p className="font-semibold text-sm">{testimonial.author}</p>
+                    <p className="text-xs text-muted-foreground">{testimonial.position}, {testimonial.company}</p>
                   </div>
                 </div>
               </GlassCard>
             </div>
           ))}
+        </div>
+        <div className="text-center mt-12">
+          <a href="/resources" className="text-primary hover:underline font-medium">Explore our resources &rarr;</a>
         </div>
       </div>
     </section>
