@@ -7,7 +7,7 @@ import AnimatedButton from "@/components/ui/AnimatedButton";
 import { toast } from "@/components/ui/use-toast";
 
 const Contact = () => {
-  const contactEmail = 'troy@ownyourai.org';
+    const contactEmail = 'troy@ownmyai.info';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
